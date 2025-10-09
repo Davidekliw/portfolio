@@ -1,0 +1,37 @@
+// root als Fallback-Theme
+:root {
+    --color-background: #141D2F;
+    --color-primary: #70E61C;
+    --color-secondary: #9747FF;
+    --color-third: #1CDAE6;
+    --color-text: #FFFFFF;
+    --color-text-active: #70E61C;
+    --color-warn: #E61C40;
+}
+
+.themeA {
+    --color-background: #141D2F;
+    --color-primary: #70E61C;
+    --color-secondary: #9747FF;
+    --color-third: #1CDAE6;
+    --color-text: #FFFFFF;
+    --color-text-active: #70E61C;
+}
+
+.themeB {
+    --color-background: #141D2F;
+    --color-primary: #4B47FF;
+    --color-secondary: #00BEE8;
+    --color-third: #1ce6b6;
+    --color-text: #FFFFFF;
+    --color-text-active: #70E61C;
+}
+
+.themeC {
+    --color-background: #141D2F;
+    --color-primary: #FF4747;
+    --color-secondary: #FA7902;
+    --color-third: #d61ce6;
+    --color-text: #FFFFFF;
+    --color-text-active: #70E61C;
+}
