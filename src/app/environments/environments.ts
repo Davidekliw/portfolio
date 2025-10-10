@@ -4,5 +4,7 @@ export const environment = {
   fname: 'David',
   lname: 'Wilke',
   name: 'David Wilke',
-  title: 'Portfolio'
+  title: 'Portfolio',
+  profession: 'FRONTEND DEVELOPER',
+  year: new Date().getFullYear()
 };
