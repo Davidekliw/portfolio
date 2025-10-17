@@ -13,4 +13,5 @@ import { environment } from '../environments/environments';
 export class FooterComponent {
   name = environment.name;
   fname = environment.fname;
+  year = environment.year;
 }
