@@ -1,4 +1,3 @@
-<div>
-    <button>DE</button>
-    <button>EN</button>
+<div class="langButtons">
+    <button *ngFor="let language of languageOptions" [class.active]="selected === language" (click)="onSelectedChange(language)">{{ language }}</button>
 </div>

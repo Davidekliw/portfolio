@@ -1,13 +1,24 @@
 .navBar {
+    width: 100%;
     font-size: 23px;
     font-weight: 400;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    >a {
+        color: var(--color-text);
+    }
+
+    &>a:hover {
+        color: var(--color-text-active);
+    }
+
+    &>a.active {
+        // border-bottom: solid 2px var(--color-primary);
+        color: var(--color-text-active);
+        background: linear-gradient(to right, var(--color-secondary) 0 55px, transparent 50%) bottom no-repeat;
+        background-size: 100% 3px;
+        cursor: default;
+    }
 }

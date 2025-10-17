@@ -14,4 +14,11 @@ import { ChangeLanguageComponent } from "./change-language/change-language.compo
 })
 export class MenuComponent {
     fname = environment.fname;
+    selected: string | null = null;
+
+    activateHighlight(section: string): void {
+        this.selected = section;
+        console.log(section);
+        
+    }
 }
