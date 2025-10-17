@@ -1,0 +1,72 @@
+.aboveTheFold {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.headlines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    >.gab-15 {
+        gap: 15px;
+    }
+}
+
+.centerBoxColumn {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    >button {
+        font-size: 23px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px;
+        background-color: var(--color-primary);
+        color: var(--color-text);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+.centerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    .vertical {
+        font-size: 64px;
+        height: 64px;
+        font-weight: 400;
+        transform: rotate(-90deg);
+        vertical-align: bottom;
+    }
+}
+
+h1 {
+    font-size: 90px;
+    font-weight: 700;
+    margin: 0;
+    padding: 8px 0;
+}
+
+h2 {
+    font-size: 58px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: var(--color-secondary);
+}

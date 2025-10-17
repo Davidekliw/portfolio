@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../environments/environments';
 
 @Component({
   selector: 'app-above-the-fold',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
+
+  name = environment.name;
+  profession = environment.profession;
 
 }
