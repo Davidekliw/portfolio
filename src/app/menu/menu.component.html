@@ -1,8 +1,21 @@
 <div class="navBar">
-    <a href="">{{ fname }}</a>
-    <app-change-theme></app-change-theme>
-    <a (click)="activateHighlight('aboutMe')" [class.active]="selected === 'aboutMe'" href="#aboutMe">About Me</a>
-    <a (click)="activateHighlight('skills')" [class.active]="selected === 'skills'" href="#skills">Skills</a>
-    <a (click)="activateHighlight('portfolio')" [class.active]="selected === 'portfolio'" href="#portfolio">Portfolio</a>
-    <app-change-language></app-change-language>
+    <div class="logoBox">
+        <!-- <a href="">{{ fname }}</a> -->
+        <!-- <img class="logo" src="../../assets/icons/test/logoCurrent.svg" alt="{{ fname }}"> -->
+        <img class="logo" src="../../assets/icons/test/Zeichnung ohne d ohne l.svg" alt="{{ fname }}">
+    </div>
+    <div>
+        <div class="linkContainer">
+            <a (click)="activateHighlight('aboutMe')" [class.active]="selected === 'aboutMe'" href="#aboutMe">About Me</a>
+            <a (click)="activateHighlight('skills')" [class.active]="selected === 'skills'" href="#skills">Skills</a>
+            <a (click)="activateHighlight('portfolio')" [class.active]="selected === 'portfolio'" href="#portfolio">Portfolio</a>
+        </div>
+        <div class="selectontainer">
+            <app-change-language></app-change-language>
+            <app-change-theme></app-change-theme>
+        </div>
+    </div>
+        <div class="burger" (click)="toggleMenu()">
+            <div class="line" *ngFor="let index of [1,2,3]; index as i"></div>
+    </div>
 </div>
