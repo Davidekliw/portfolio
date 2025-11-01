@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ChangeThemeComponent } from './change-theme/change-theme.component';
-import { AppComponent } from '../app.component';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { ChangeLanguageComponent } from "./change-language/change-language.component";
@@ -8,17 +7,20 @@ import { ChangeLanguageComponent } from "./change-language/change-language.compo
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [ChangeThemeComponent, ChangeLanguageComponent],
+  imports: [ChangeThemeComponent, ChangeLanguageComponent, CommonModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-    fname = environment.fname;
-    selected: string | null = null;
+  fname = environment.fname;
+  selected: string | null = null;
 
-    activateHighlight(section: string): void {
-        this.selected = section;
-        console.log(section);
-        
-    }
+  activateHighlight(section: string): void {
+    this.selected = section;
+    console.log(section);
+
+  }
+
+  toggleMenu(): void {
+  }
 }
