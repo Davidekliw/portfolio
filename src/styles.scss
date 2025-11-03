@@ -1,5 +1,8 @@
 @import 'assets/styles/variables.scss';
 
+* {
+    line-height: 120%;
+}
 html {
     width: 100%;
     max-width: 1440px;
@@ -24,8 +27,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppin', sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: 16px;
+    font-weight: 400;
     color: var(--color-text);
     background: var(--color-background);
     box-sizing: border-box;
@@ -37,5 +41,20 @@ a {
 }
 
 h1 {
-    font-size: 90px;
+    font-size: clamp(44px, 6vw, 90px);
+    font-weight: 700;
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(28px, 5vw, 58px);
+    font-weight: 400;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: bold;
 }
