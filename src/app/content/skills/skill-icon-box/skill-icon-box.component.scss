@@ -1,24 +1,26 @@
 .skillList {
     width: 100%;
     max-width: 664px;
-    max-height: 520px;
+    max-height: 404px;
     overflow-y: hidden;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 88px;
+    gap: 50px 75px;
 }
 
 .skill {
     width: 88px;
+    height: 101px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    // gap: 10px;
 
     >img {
+        padding: 12px 12px;
         width: 60px;
         height: auto;
     }
@@ -30,12 +32,20 @@
 
 @media (max-width: 1385px) {
     .skillList {
-        gap: 64px;
+        gap: 39px 64px;
     }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 1070px) {
     .skillList {
-        gap: 40px;
+        gap: 27px 52px;
+    }
+}
+
+@media (max-width: 778px) {
+    .skillList {
+        max-height: none;
+        justify-content: center;
+        gap: 15px 40px;
     }
 }
