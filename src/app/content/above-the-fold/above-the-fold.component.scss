@@ -48,18 +48,23 @@
     // min-width: 0;
 
     >button {
+        // box-sizing: border-box;
+        width: 165px;
+        height: 58px;
         font-size: 23px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 30px;
-        padding-right: 30px;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
+        // padding-left: 30px;
+        // padding-right: 30px;
         border-radius: 10px;
         background-color: var(--color-primary);
         color: var(--color-text);
         display: flex;
+        // flex: 1 1 auto;
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
     }
 }
 
