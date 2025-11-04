@@ -1,16 +1,17 @@
-<div class="projectBox">
-    <img src="../../../../assets/img/platzhalter.png" alt="">
-    <div class="gap-30">
-        <div class="gap-15">
-            <h3 class="changeColor">JOIN</h3>
-            <h4>HTML | CSS | Firebase</h4>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, rerum facere. Voluptatem, et? Ut
-                labore
+<div *ngFor="let project of projects">
+    <div class="projectBox">
+        <img [src]="project.image" alt="">
+        <div class="gap-30">
+            <div class="gap-15">
+                <h3 class="changeColor">{{ project.title }}</h3>
+                <h4>{{ project.technologies }}</h4>
+                <div>{{ project.description }}
+                </div>
             </div>
-        </div>
-        <div class="buttonsBox">
-            <button class="buttonColor">Live test</button>
-            <button>Github</button>
+            <div class="buttonsBox">
+                <button class="buttonColor"><a [href]="project.link">Live test</a></button>
+                <button *ngIf="project.gitlink"><a [href]="project.gitlink">Github</a></button>
+            </div>
         </div>
     </div>
 </div>
