@@ -81,6 +81,14 @@
                 // flex-direction: column;
                 // gap: 20px;
                 // align-items: flex-start;
+                cursor: pointer;
+
+                &:hover {
+                    width: 220px;
+                    height: 68px;
+                    background-color: var(--color-secondary);
+                    cursor: pointer;
+                }
             }
         }
     }
