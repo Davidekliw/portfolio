@@ -1,0 +1,36 @@
+.headBox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+
+    .headlinePosition {
+        padding-right: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        gap: 32px;
+
+    }
+
+    p {
+        margin: 0px;
+    }
+}
+
+.decorationLineShort {
+    max-width: 100px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+}
+
+.decorationLine {
+    max-width: 507px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+}
