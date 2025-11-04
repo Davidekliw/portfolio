@@ -17,13 +17,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // gap: 10px;
 
     >img {
         padding: 12px 12px;
         width: 60px;
         height: auto;
+
+        will-change: transform;
+        transform: translateY(0);
+        // transition: transform 120ms cubic-bezier(.22,.9,.37,1);
     }
+
+    &:hover > img,
+    &:focus-within > img {
+        animation: liftThenSettle 1.6s cubic-bezier(.22,.9,.37,1) 0s 1 forwards;
+    }
+}
+
+@keyframes liftThenSettle {
+  0%   { transform: translateY(0); }
+  6%   { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 .skillName {
