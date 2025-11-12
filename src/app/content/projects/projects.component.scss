@@ -1,3 +1,16 @@
+.gap-32 {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+app-application {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // margin: 0 auto;
+    gap: 80px;
+}
+
 .headBox {
     display: flex;
     flex-direction: column;
@@ -33,4 +46,12 @@
     height: 4px;
     background-color: var(--color-secondary);
     border-radius: 2px;
+}
+
+@media (max-width: 1000px) {
+    app-application {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
 }
