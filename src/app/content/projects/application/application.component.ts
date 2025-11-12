@@ -19,7 +19,15 @@ export class ApplicationComponent {
       description: 'This is a description of Project JOIN.',
       image: '../../../../assets/img/platzhalter.png',
       link: 'https://join.david-wilke.com',
-      gitlink: 'https://github.com/Davidekliw/El-Pollo-Loco.git'
+      gitlink: 'https://github.com/ChristianBockshorn/JOIN-46#'
+    },
+    {
+      title: 'Portfolio',
+      technologies: 'Angular, JavaScript, HTML, CSS, PHP',
+      description: 'This is a description of Project JOIN.',
+      image: '../../../../assets/img/platzhalter.png',
+      link: '#start',
+      gitlink: 'https://github.com/Davidekliw/portfolio'
     },
     {
       title: 'El Pollo Loco',
@@ -27,7 +35,15 @@ export class ApplicationComponent {
       description: 'This is a description of Project El Pollo Loco.',
       image: '../../../../assets/img/platzhalter.png',
       link: 'https://epl.david-wilke.com',
-      gitlink: 'https://github.com/Davidekliw/El-Pollo-Loco.git'
+      gitlink: 'https://github.com/Davidekliw/El-Pollo-Loco'
+    },
+    {
+      title: 'Pokedex',
+      technologies: 'JavaScript, API, HTML, CSS',
+      description: 'This is a description Pokedex.',
+      image: '../../../../assets/img/platzhalter.png',
+      link: 'https://pokedex.david-wilke.com',
+      gitlink: ''
     },
     {
       title: 'Gasthaus zur Talsperre',

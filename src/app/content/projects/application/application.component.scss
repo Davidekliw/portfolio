@@ -1,11 +1,81 @@
 .projectBox {
-    height: 620px;
+    height: 340px;
     width: 100%;
-    max-width: 513px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    // align-items: center;
+    justify-content: flex-end;
     gap: 35px;
+
+    &.reverseRow {
+        flex-direction: row-reverse;
+    }
+
+    .discriptionBox {
+        width: 513px;
+        // display: flex;
+        // flex-direction: column;
+        // flex: 1;
+        // text-align: start;
+        gap: 30px;
+
+        &.changeTextAlignment {
+            text-align: end;
+        }
+
+        .buttonsBox {
+            display: flex;
+            flex-direction: row;
+            gap: 86px;
+            // margin-top: 40px;
+            justify-content: flex-start;
+
+            &.changeButtonAlignment {
+                justify-content: flex-end;
+            }
+
+            .buttonColor {
+                background-color: var(--color-secondary);
+                border: 1px solid var(--color-secondary);
+
+            }
+
+            a {
+                color: var(--color-text);
+            }
+
+            button {
+                width: 152px;
+                height: 58px;
+                border: 1px solid var(--color-primary);
+                color: var(--color-text);
+                background-color: var(--color-background);
+                font-size: 18px;
+                font-weight: 400;
+                border-radius: 10px;
+                transition: background-color 0.15s ease;
+
+                &:hover {
+                    background-color: var(--color-primary);
+                    border: 1px solid var(--color-primary);
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 15px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 620px;
+    }
 }
 
 h3 {
@@ -33,43 +103,57 @@ h4 {
     gap: 30px;
 }
 
-.gap-15 {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+@media (max-width: 1000px) {
+    .projectBox {
+        height: auto;
+        // width: 100%;
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+
+        &.reverseRow {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .discriptionBox {
+            width: 100%;
+            max-width: 513px;
+            // display: flex;
+            // flex-direction: column;
+            // flex: 1;
+            // text-align: start;
+            // gap: 30px;
+
+            &.changeTextAlignment {
+                text-align: center;
+            }
+
+            .buttonsBox {
+                display: flex;
+                flex-direction: row;
+                gap: 86px;
+                // margin-top: 40px;
+                justify-content: center;
+
+                &.changeButtonAlignment {
+                    justify-content: center;
+                }
+            }
+        }
+    }
 }
 
-.buttonsBox {
-    display: flex;
-    flex-direction: row;
-    gap: 86px;
-    margin-top: 40px;
-
-    .buttonColor {
-        background-color: var(--color-secondary);
-        border: 1px solid var(--color-secondary);
-
-    }
-
-    a {
-        color: var(--color-text);
-    }
-
-    button {
-        width: 152px;
-        height: 58px;
-        border: 1px solid var(--color-primary);
-        color: var(--color-text);
-        background-color: var(--color-background);
-        font-size: 18px;
-        font-weight: 400;
-        border-radius: 10px;
-        transition: background-color 0.15s ease;
-
-        &:hover {
-            background-color: var(--color-primary);
-            border: 1px solid var(--color-primary);
-            cursor: pointer;
+@media (max-width: 500px) {
+    .projectBox {
+        .discriptionBox {
+            .buttonsBox {
+                gap: unset;
+                justify-content: space-between;
+            }
         }
     }
 }

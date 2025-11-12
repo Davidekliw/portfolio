@@ -1,14 +1,14 @@
-<div *ngFor="let project of projects">
-    <div class="projectBox">
+<div *ngFor="let project of projects; let i = index">
+    <div class="projectBox" [ngClass]="{'reverseRow': i % 2 !== 0}">
         <img [src]="project.image" alt="">
-        <div class="gap-30">
-            <div class="gap-15">
+        <div class="discriptionBox" [ngClass]="{'changeTextAlignment': i % 2 !== 0}">
+            <div>
                 <h3 class="changeColor">{{ project.title }}</h3>
                 <h4>{{ project.technologies }}</h4>
                 <div>{{ project.description }}
                 </div>
             </div>
-            <div class="buttonsBox">
+            <div class="buttonsBox" [ngClass]="{'changeButtonAlignment': i % 2 !== 0}">
                 <button class="buttonColor"><a [href]="project.link">Live test</a></button>
                 <button *ngIf="project.gitlink"><a [href]="project.gitlink">Github</a></button>
             </div>
