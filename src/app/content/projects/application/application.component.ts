@@ -11,7 +11,6 @@ import { NgFor } from '@angular/common';
 })
 export class ApplicationComponent {
 
-  // Hier jetzt ein array erstellen welches details links und Bilder zu den Projekten beinhaltet
   projects = [
     {
       title: 'JOIN',
