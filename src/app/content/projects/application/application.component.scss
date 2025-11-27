@@ -143,6 +143,11 @@ h4 {
                     justify-content: center;
                 }
             }
+
+            .buttonsBox button:only-child {
+                margin: 0 auto;
+                /* zentriert den Einzelbutton */
+            }
         }
     }
 }
@@ -153,6 +158,11 @@ h4 {
             .buttonsBox {
                 gap: unset;
                 justify-content: space-between;
+            }
+
+            &.changeButtonAlignment {
+                justify-content: space-between;
+
             }
         }
     }

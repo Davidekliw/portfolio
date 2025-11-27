@@ -1,3 +1,11 @@
+app-skill-icon-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
 .mySkillsBox {
     // max-height: 520px;
     padding-left: 100px;
@@ -102,9 +110,11 @@ h3 {
     margin: 0;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 800px) {
     .mySkillsBox {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: flex-end;
         gap: 20px;
+        padding-left: 0;
     }
 }
