@@ -6,9 +6,36 @@
     // background-color: --var(--background-color);
 }
 
+.headlineBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    .posRel {
+        position: relative;
+        left: 0px;
+    }
+
+    .decorationLine {
+        width: 100%;
+        position: absolute;
+        width: calc((100vw - 272px) / 2) !important;
+        background-color: var(--color-secondary);
+        height: 2px;
+        align-self: center;
+    }
+}
+
 .contentBox {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 149px;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
 }
 
 .formContainer {
@@ -27,5 +54,22 @@
             cursor: pointer;
             border: 1px solid var(--color-primary);
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    .contentBox {
+        padding-left: 50px;
+        padding-right: 50px;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .contentBox {
+        flex-direction: column;
+        padding-left: 24px;
+        padding-right: 24px;
+        gap: none;
     }
 }
