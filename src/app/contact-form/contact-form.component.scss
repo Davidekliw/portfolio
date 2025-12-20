@@ -1,15 +1,15 @@
 .contactBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     // background-color: --var(--background-color);
 }
 
 .headlineBox {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     gap: 32px;
 
     .posRel {
@@ -18,8 +18,8 @@
     }
 
     .decorationLine {
-        width: 100%;
-        position: absolute;
+        // width: 100%;
+        // position: absolute;
         width: calc((100vw - 272px) / 2) !important;
         background-color: var(--color-secondary);
         height: 2px;
@@ -72,4 +72,63 @@
         padding-right: 24px;
         gap: none;
     }
+}
+
+
+.radioBox {
+  cursor: pointer;
+}
+
+.radioBox input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Grundform */
+.box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-primary);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: border-color .2s;
+}
+
+/* Hover-Schein */
+.box::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  background: rgba(24, 55, 112, 0.3);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.radioBox:hover .box::before {
+  opacity: 1;
+}
+
+/* Haken */
+.check {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-primary);
+//   stroke-width: 3;
+  fill: var(--color-primary);
+  opacity: 0;
+  transform: scale(.6);
+  transition: .2s ease;
+}
+
+/* Checked-Zustand */
+.radioBox input:checked + .box {
+  border-color: var(--color-primary);
+}
+
+.radioBox input:checked + .box .check {
+  opacity: 1;
+  transform: scale(1);
 }
