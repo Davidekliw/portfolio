@@ -11,23 +11,27 @@
             <p>hier muss ein Text stehen
             </p>
         </div>
-        <form class="formContainer">
-            <label for="name"></label>
-            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
-            <label for="email"></label>
-            <input type="text" id="email" name="email" placeholder="Your email" autocomplete="email">
-            <label for="subject"></label>
-            <textarea type="text" id="subject" name="subject" placeholder="Your message"></textarea>
-            <label class="radioBox">
-                <input type="radio" name="opt" id="privacy">
+        <form class="formContainer" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <input formControlName="name" id="name" name="name" placeholder="Your name" autocomplete="name">
+            <input formControlName="email" id="email" name="email" placeholder="Your email" autocomplete="email">
+            <textarea formControlName="subject" id="subject" name="subject" placeholder="Your message"></textarea>
+            <label class="radioBox boxAsRow">
+                <input type="checkbox" formControlName="agree" id="privacy">
                 <span class="box">
                     <svg class="check" viewBox="0 0 24 24">
-                        <path d="M10.6 13.4L8.45 11.25C8.26667 11.0667 8.03333 10.975 7.75 10.975C7.46667 10.975 7.23333 11.0667 7.05 11.25C6.86667 11.4333 6.775 11.6667 6.775 11.95C6.775 12.2333 6.86667 12.4667 7.05 12.65L9.9 15.5C10.1 15.7 10.3333 15.8 10.6 15.8C10.8667 15.8 11.1 15.7 11.3 15.5L16.95 9.85C17.1333 9.66667 17.225 9.43333 17.225 9.15C17.225 8.86667 17.1333 8.63333 16.95 8.45C16.7667 8.26667 16.5333 8.175 16.25 8.175C15.9667 8.175 15.7333 8.26667 15.55 8.45L10.6 13.4Z"/>
+                        <path
+                            d="M10.6 13.4L8.45 11.25C8.26667 11.0667 8.03333 10.975 7.75 10.975C7.46667 10.975 7.23333 11.0667 7.05 11.25C6.86667 11.4333 6.775 11.6667 6.775 11.95C6.775 12.2333 6.86667 12.4667 7.05 12.65L9.9 15.5C10.1 15.7 10.3333 15.8 10.6 15.8C10.8667 15.8 11.1 15.7 11.3 15.5L16.95 9.85C17.1333 9.66667 17.225 9.43333 17.225 9.15C17.225 8.86667 17.1333 8.63333 16.95 8.45C16.7667 8.26667 16.5333 8.175 16.25 8.175C15.9667 8.175 15.7333 8.26667 15.55 8.45L10.6 13.4Z" />
                     </svg>
                 </span>
+                <p>I´ve read <a href="privacyPolicy">privacy policy</a> and agree to the processing of my data as
+                    outlined.
+                </p>
             </label>
-            <label for="privacy">I agree to the processing of my data in accordance with the privacy policy.</label>
-            <button> Send message</button>
+            <div class="error" *ngIf="showAgreeError">Please accept the privacy policy.</div>
+            <div class="buttonBox">
+                <button class="sendingButton" [class.active]="form.controls.agree.value" type="submit"> Send message
+                    :)</button>
+            </div>
         </form>
     </div>
 </div>
