@@ -9,8 +9,8 @@
                 </div>
             </div>
             <div class="buttonsBox" [ngClass]="{'changeButtonAlignment': i % 2 !== 0}">
-                <button class="buttonColor"><a [href]="project.link">Live test</a></button>
-                <button *ngIf="project.gitlink"><a [href]="project.gitlink">Github</a></button>
+                <a class="button buttonColor" [href]="project.link" target="_blank" rel="noopener noreferrer">Live test</a>
+                <a *ngIf="project.gitlink" class="button buttonWithoutColor" [href]="project.gitlink" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
         </div>
     </div>
