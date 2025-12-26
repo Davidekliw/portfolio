@@ -13,20 +13,27 @@
         </div>
         <form class="formContainer" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
             <div class="hintBox">
-                <input formControlName="name" id="name" name="name" placeholder="Your name" autocomplete="name">
-                <div class="error" *ngIf="showAgreeError">Your name is required</div>
-                <div *ngIf="fieldInvalid('name')" class="error">
-                    <div *ngIf="name?.errors?.['required']">Name ist erforderlich.</div>
-                    <div *ngIf="name?.errors?.['minlength']">Name muss mindestens 2 Zeichen haben.</div>
+                <input formControlName="name" id="name" name="name" placeholder="Your name" autocomplete="name"
+                    (focus)="clearActive('name')" (blur)="setActive('name')">
+                <div *ngIf="fieldActiveInvalid('name')" class="error">
+                    <div *ngIf="name?.errors?.['required']">Your name is required</div>
+                    <div *ngIf="name?.errors?.['minlength']">Enter at least 2 characters</div>
                 </div>
             </div>
             <div class="hintBox">
-                <input formControlName="email" id="email" name="email" placeholder="Your email" autocomplete="email">
-                <div class="error" *ngIf="showAgreeError">Please email is required</div>
+                <input formControlName="email" id="email" name="email" placeholder="Your email" autocomplete="email"
+                    (focus)="clearActive('email')" (blur)="setActive('email')">
+                <div *ngIf="fieldActiveInvalid('email')" class="error">
+                    <div *ngIf="name?.errors?.['required']">Your email is required</div>
+                </div>
             </div>
             <div class="hintBox">
-                <textarea formControlName="subject" id="subject" name="subject" placeholder="Your message"></textarea>
-                <div class="error" *ngIf="showAgreeError">Please email is required</div>
+                <textarea formControlName="subject" id="subject" name="subject" placeholder="Your message"
+                    (focus)="clearActive('subject')" (blur)="setActive('subject')">
+                </textarea>
+                <div *ngIf="fieldActiveInvalid('subject')" class="error">
+                    <div *ngIf="name?.errors?.['required']">Your message is empty</div>
+                </div>
             </div>
             <label class="radioBox boxAsRow">
                 <input type="checkbox" formControlName="agree" id="privacy">
@@ -51,4 +58,4 @@
             </div>
         </form>
     </div>
-</div>z
+</div>

@@ -45,6 +45,26 @@ export class ContactFormComponent {
     return !!(c && (c.touched || c.dirty) && c.invalid);
   }
 
+  // Aktives Feld (wird beim focus gesetzt). Wird verwendet, um Fehler nur während Fokus anzuzeigen.
+  activeField: string | null = null;
+
+  setActive(fieldName: string) {
+    this.activeField = fieldName;
+  }
+
+  clearActive(fieldName?: string) {
+    // Wenn ein Feld blurriert, entferne den aktiven Marker (nur wenn es das gleiche Feld war)
+    if (!fieldName || this.activeField === fieldName) {
+      this.activeField = null;
+    }
+  }
+
+  // Prüft ob das Feld aktuell aktiv/focused und invalid ist
+  fieldActiveInvalid(fieldName: string) {
+    const c = this.form.get(fieldName);
+    return !!(c && c.invalid && this.activeField === fieldName);
+  }
+
   onSubmit() {
     // Markiere Controls für visuelles Feedback
     this.form.markAllAsTouched();
