@@ -81,9 +81,16 @@ p {
 @media (max-width: 740px) {
     .aboutMeContainer {
         justify-content: center;
+        padding-left: 50px;
     }
 
     .circlePortaitBox {
         display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .aboutMeContainer {
+        padding-left: 10px;
     }
 }
