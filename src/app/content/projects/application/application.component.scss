@@ -189,11 +189,11 @@ h4 {
             .buttonsBox {
                 gap: unset;
                 justify-content: space-between;
-            }
 
-            &.changeButtonAlignment {
-                justify-content: space-between;
+                &.changeButtonAlignment {
+                    justify-content: space-between;
 
+                }
             }
         }
     }
