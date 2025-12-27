@@ -18,25 +18,25 @@ export class ReviewsComponent {
       id: 1,
       name: 'John Doe',
       text: 'Great service and friendly staff. Highly recommend!',
-      image: '../../../assets/icons/placeholder.png'
+      image: 'assets/icons/placeholder.png'
     },
     {
       id: 2,
       name: 'Martin Mustermann',
       text: 'Great service and friendly staff. Highly recommend!',
-      image: '../../../assets/icons/placeholder.png'
+      image: 'assets/icons/placeholder.png'
     },
     {
       id: 1,
       name: 'John Doe',
       text: 'Great service and friendly staff. Highly recommend!',
-      image: '../../../assets/icons/placeholder.png'
+      image: 'assets/icons/placeholder.png'
     },
     {
       id: 2,
       name: 'Martin Mustermann',
       text: 'Great service and friendly staff. Highly recommend!',
-      image: '../../../assets/icons/placeholder.png'
+      image: 'assets/icons/placeholder.png'
     }
   ];
 

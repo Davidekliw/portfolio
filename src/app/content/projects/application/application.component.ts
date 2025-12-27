@@ -16,7 +16,7 @@ export class ApplicationComponent {
       title: 'JOIN',
       technologies: 'JavaScript, HTML, CSS',
       description: 'This is a description of Project JOIN.',
-      image: '../../../../assets/img/platzhalter.png',
+      image: 'assets/img/platzhalter.png',
       link: 'https://join.david-wilke.com',
       gitlink: 'https://github.com/ChristianBockshorn/JOIN-46#'
     },
@@ -24,7 +24,7 @@ export class ApplicationComponent {
       title: 'Portfolio',
       technologies: 'Angular, JavaScript, HTML, CSS, PHP',
       description: 'This is a description of Project JOIN.',
-      image: '../../../../assets/img/platzhalter.png',
+      image: 'assets/img/platzhalter.png',
       link: '#start',
       gitlink: 'https://github.com/Davidekliw/portfolio'
     },
@@ -32,7 +32,7 @@ export class ApplicationComponent {
       title: 'El Pollo Loco',
       technologies: 'JavaScript, Canvas, HTML, CSS',
       description: 'This is a description of Project El Pollo Loco.',
-      image: '../../../../assets/img/platzhalter.png',
+      image: 'assets/img/platzhalter.png',
       link: 'https://epl.david-wilke.com',
       gitlink: 'https://github.com/Davidekliw/El-Pollo-Loco'
     },
@@ -40,7 +40,7 @@ export class ApplicationComponent {
       title: 'Pokedex',
       technologies: 'JavaScript, API, HTML, CSS',
       description: 'This is a description Pokedex.',
-      image: '../../../../assets/img/platzhalter.png',
+      image: 'assets/img/platzhalter.png',
       link: 'https://pokedex.david-wilke.com',
       gitlink: ''
     },
@@ -48,7 +48,7 @@ export class ApplicationComponent {
       title: 'Gasthaus zur Talsperre',
       technologies: 'JavaScript, HTML, CSS',
       description: 'This is a description of Website.',
-      image: '../../../../assets/img/platzhalter.png',
+      image: 'assets/img/platzhalter.png',
       link: 'https://gasthaus-zur-talsperre.de',
       gitlink: ''
     }
