@@ -65,8 +65,10 @@ p {
 
         img {
             width: 100%;
+            max-width: 322px;
             height: auto;
-            object-fit: cover;
+            max-height: 322px;
+            object-fit: contain;
         }
     }
 
