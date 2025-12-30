@@ -1,6 +1,7 @@
 .contactBox {
     display: flex;
     flex-direction: column;
+    gap: 40px;
     // align-items: center;
     // justify-content: center;
     // background-color: --var(--background-color);
@@ -80,9 +81,9 @@
             }
 
             /* Wenn das Feld bereits berührt/validiert wurde und ungültig ist, dauerhaft rot markieren */
-            &.ng-touched.ng-invalid {
+            // &.ng-touched.ng-invalid {
                 // border-color: var(--color-warn);
-            }
+            // }
         }
     }
 
