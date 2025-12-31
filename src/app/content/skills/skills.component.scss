@@ -1,106 +1,92 @@
-app-skill-icon-box {
+.skills {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+    gap: 40px;
+    text-align: end;
 }
 
-
-.mySkillsBox {
-    // max-height: 520px;
-    padding-left: 100px;
+.mySkillsTextBox {
+    max-width: 571px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    // gap: 20px;
-    text-align: end;
+    flex-direction: column;
+}
 
-    .mySkillsTextBox {
-        max-width: 571px;
-        width: 100%;
+.gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.headlineStyle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+
+    .decorationLine {
+        max-width: 68px;
+        flex: 1;
+        height: 4px;
+        background-color: var(--color-secondary);
+        border-radius: 2px;
     }
+}
 
-    .gap-40 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 40px;
+.twoColorLine {
+    font-size: clamp(24px, 4vw, 32px);
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    .changeColor {
+        display: inline;
+        color: var(--color-secondary);
     }
+}
 
-    .gap-24 {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+button {
+    width: 200px;
+    height: 58px;
+    font-size: 23px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-text);
+    cursor: pointer;
+
+    &:hover {
+        width: 220px;
+        height: 68px;
+        background-color: var(--color-secondary);
+        border: 1px solid var(--color-secondary);
+        cursor: pointer;
     }
+}
 
-    .gap-16 {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+.intro {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        padding-right: 100px;
     }
+}
 
-    .headlineStyle {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 32px;
+p {
+    margin: 0;
+}
 
-        .decorationLine {
-            width: 68px;
-            height: 4px;
-            background-color: var(--color-secondary);
-            border-radius: 2px;
-        }
-    }
-
-    >div {
-        .pdRight100 {
-            padding-right: 100px;
-
-            p {
-                margin: 0;
-            }
-
-            .twoColorLine {
-                font-size: clamp(24px, 4vw, 32px);
-                width: 100%;
-                display: flex;
-                flex-direction: row !important;
-                flex: 1;
-                justify-content: flex-end;
-                align-items: center;
-
-                .changeColor {
-                    display: inline;
-                    color: var(--color-secondary);
-                }
-            }
-
-            button {
-                width: 200px;
-                height: 58px;
-                font-size: 23px;
-                // padding-top: 15px;
-                // padding-bottom: 15px;
-                // padding-left: 30px;
-                // padding-right: 30px;
-                border-radius: 10px;
-                background-color: var(--color-primary);
-                color: var(--color-text);
-                // display: flex;
-                // flex-direction: column;
-                // gap: 20px;
-                // align-items: flex-start;
-                cursor: pointer;
-
-                &:hover {
-                    width: 220px;
-                    height: 68px;
-                    background-color: var(--color-secondary);
-                    cursor: pointer;
-                }
-            }
-        }
-    }
+.textWithButtonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 h3 {
@@ -110,11 +96,111 @@ h3 {
     margin: 0;
 }
 
-@media (max-width: 800px) {
-    .mySkillsBox {
-        flex-direction: column-reverse;
-        align-items: flex-end;
-        gap: 20px;
-        padding-left: 0;
+.cta {
+    padding-right: 100px;
+}
+
+@media (min-width: 900px) {
+    .skills {
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        // gap: 32px;
+    }
+
+    .intro {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 899px) {
+
+    p {
+        padding-left: 12px;
+    }
+
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .icons {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text {
+        order: 1;
+        display: contents;
+    }
+
+    .intro {
+        order: 1;
+        gap: 40px;
+    }
+
+    .cta {
+        order: 3;
+    }
+}
+
+@media (max-width: 700px) {
+    .intro {
+
+        .headlineStyle {
+            .decorationLine {
+                max-width: 24px;
+            }
+        }
+
+        p {
+            padding-right: 56px;
+        }
+    }
+
+    .cta {
+        padding-right: 56px;
+    }
+}
+
+@media (max-width: 600px) {
+    .headlineStyle {
+        gap: 16px;
+
+        .decorationLine {
+            width: 24px;
+        }
+    }
+
+    .cta {
+        .textWithButtonBox {
+            align-items: unset;
+
+            >button {
+                margin-left: 50vw;
+                translate: -50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .intro {
+        p {
+            padding-right: 40px;
+        }
+    }
+
+    .headlineStyle {
+        gap: 16px;
+    }
+
+    .cta {
+        padding-right: 40px;
     }
 }
