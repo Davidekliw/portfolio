@@ -22,7 +22,22 @@
             <app-change-theme></app-change-theme>
         </div>
     </div>
-        <div class="burger" (click)="toggleMenu()">
-            <div class="line" *ngFor="let index of [1,2,3]; index as i"></div>
+    <div class="burger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen">
+        <div class="line" *ngFor="let index of [1,2,3]; index as i">
+        </div>
+    </div>
+</div>
+<div class="linkContainerMobile">
+    <div class="mobileMenuBackground" [class.open]="menuOpen" (click)="closeMenu()">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 29px;">
+            <a (click)="activateHighlight('aboutMe')" [class.active]="selected === 'aboutMe'" href="#aboutMe"
+                translate="about.title"></a>
+            <a (click)="activateHighlight('skills')" [class.active]="selected === 'skills'" href="#skills"
+                translate="skills.skills"></a>
+            <a (click)="activateHighlight('portfolio')" [class.active]="selected === 'portfolio'"
+                href="#portfolio">Portfolio</a>
+            <app-change-language></app-change-language>
+        </div>
+        <app-change-theme></app-change-theme>
     </div>
 </div>
