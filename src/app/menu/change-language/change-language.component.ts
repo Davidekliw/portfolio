@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
+import { LanguageService } from '../../service/language.service';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-change-language',
@@ -9,17 +12,17 @@ import { OnInit } from '@angular/core';
   templateUrl: './change-language.component.html',
   styleUrl: './change-language.component.scss'
 })
-export class ChangeLanguageComponent implements OnInit {
-  languageOptions = ['DE', 'EN'];
-  selected: string | null = null;
-  localStorageKey = 'lang';
 
-  ngOnInit(): void {
-    const saved = localStorage.getItem(this.localStorageKey);
-    this.selected = saved ?? 'DE';
-  }
-  onSelectedChange(language: string) {
-    localStorage.setItem(this.localStorageKey, language);
-    this.selected = language;
+
+export class ChangeLanguageComponent {
+
+  languageOptions = ['DE', 'EN'] as const;
+  selected = this.lang.get();
+
+  constructor(public lang: LanguageService) { }
+
+  onSelectedChange(lang: 'DE' | 'EN') {
+    this.selected = lang;
+    this.lang.set(lang)
   }
 }
