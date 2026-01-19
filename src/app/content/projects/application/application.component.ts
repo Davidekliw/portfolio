@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../../service/language.service';
 
@@ -10,6 +10,25 @@ import { LanguageService } from '../../../service/language.service';
   styleUrl: './application.component.scss'
 })
 export class ApplicationComponent {
+
+  constructor(public lang: LanguageService) { }
+
+  get isEN() {
+    return this.lang.get() === 'EN';
+  }
+
+
+  @ViewChildren('laptopEl') laptops!: QueryList<ElementRef<HTMLElement>>;
+
+  ngAfterViewInit() {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('open', e.isIntersecting));
+    }, {
+      rootMargin: '-350px 0px -200px 0px',
+      threshold: 0.1
+    });
+    this.laptops.forEach(l => io.observe(l.nativeElement));
+  }
 
   projects = [
     {
@@ -68,8 +87,3 @@ export class ApplicationComponent {
     }
   ];
 }
-
-// Ich brauche passende Text in der gezeigten größe die dem Inhalt der Vorgaben entsprechen.
-
-// ein paar infos zu mir.
-// ich lerne gerne neues, arbeite viel am eigenen Smart home. bin aus dem Süden Thüringes, würde remotearbeit bevorzugen aber auch einen umzug erwägen wenn die bedingungen passen
