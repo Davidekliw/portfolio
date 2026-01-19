@@ -5,7 +5,7 @@ import { ContentComponent } from "./content/content.component";
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { environment } from './environments/environments';
-
+import { LanguageService } from './service/language.service';
 
 @Component({
   selector: 'app-root',

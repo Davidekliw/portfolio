@@ -6,7 +6,7 @@ import { environment } from '../environments/environments';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [SozialLinksComponent, CommonModule],
+  imports: [SozialLinksComponent, CommonModule, TranslateDirective, TranslatePipe],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

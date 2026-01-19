@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../../environments/environments';
+import { TranslateDirective } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-above-the-fold',

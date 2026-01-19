@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgFor } from '@angular/common';
+import { LanguageService } from '../../../service/language.service';
 
 @Component({
   selector: 'app-application',

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [SkillIconBoxComponent, CommonModule],
+  imports: [SkillIconBoxComponent, CommonModule, TranslateDirective, TranslatePipe],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
