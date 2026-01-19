@@ -5,7 +5,7 @@ import { TranslateDirective } from '@ngx-translate/core';
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
-  imports: [],
+  imports: [TranslateDirective],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
