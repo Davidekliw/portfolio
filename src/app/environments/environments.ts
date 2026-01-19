@@ -5,6 +5,5 @@ export const environment = {
   lname: 'Wilke',
   name: 'David Wilke',
   title: 'Portfolio',
-  profession: 'FRONTEND DEVELOPER',
   year: new Date().getFullYear()
 };
