@@ -2,14 +2,21 @@
     <div class="headlineBox">
         <!-- <div class="posRel"> -->
         <div class="decorationLine"></div>
-        <!-- </div> -->
-        <h1>Contact</h1>
+        <h2 translate="contact.title"></h2>
     </div>
     <div class="contentBox">
         <div class="leftContainer">
-            <h5>Got a problem to solve?</h5>
-            <p>hier muss ein Text stehen
-            </p>
+            <h5 translate="contact.headline"></h5>
+            <div style="gap: 16px;">
+                <p translate="contact.information">
+                </p>
+                <div>
+                    <p {{ [translate]="'contact.secondInformation' | translate" }}></p>&nbsp;
+                    <b>
+                        <p translate="contact.thirdInformation"></p>
+                    </b>
+                </div>
+            </div>
         </div>
         <form class="formContainer" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
             <div class="hintBox">

@@ -5,20 +5,25 @@
     <div class="text mySkillsTextBox gap-40">
         <div class="intro">
             <div class="headlineStyle">
-                <h1>My skills</h1>
+                <h2 translate="skills.title"></h2>
                 <div class="decorationLine"></div>
             </div>
-            <p>Show that have used a variety of front-end technologies in your projects.</p>
+            <p translate="skills.show"></p>
         </div>
         <div class="cta">
             <div class="textWithButtonBox gap-40">
                 <div class="gap-16">
                     <div class="twoColorLine">
-                        <h3>Looking for <div class="changeColor">another skill</div>?</h3>
+                        <h4>
+                            {{ 'skills.before' | translate }}
+                            <span class="changeColor">{{ 'skills.highlight' | translate }}</span> ?
+                        </h4>
                     </div>
-                    <p>Reveal enthusiasm for learning new technologies and frameworks</p>
+                    <p translate="skills.reveal"></p>
                 </div>
-                <button>Get in touch</button>
+                <div class="reservePlaceBox">
+                    <button translate="skills.inTouch" (click)="scrollTo('contact')"></button>
+                </div>
             </div>
         </div>
     </div>
