@@ -16,4 +16,7 @@ import { LanguageService } from './service/language.service';
 })
 export class AppComponent {
   title = environment.title;
+  constructor(lang: LanguageService) {
+    lang.init();
+  }
 }
