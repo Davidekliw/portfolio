@@ -15,27 +15,21 @@ export class ReviewsComponent {
 
   reviews = [
     {
+      id: 0,
+      name: 'Kristin Siegmund',
+      text: 'Sehr freundliche, kompetente und zuverlässige Betreuung und Umsetzung. Stets gut erreichbar und immer an den Wünschen des Kunden orientiert.',
+      image: 'assets/img/07.JPG'
+    },
+    {
       id: 1,
-      name: 'John Doe',
-      text: 'Great service and friendly staff. Highly recommend!',
+      name: 'Cornelia P.',
+      text: 'Vielen Dank für die tolle Arbeit! Die Website sieht super aus und alles was ich wollte wurde im Detail umgesetzt. Die Zusammenarbeit war sehr angenehm und auch der nachträgliche Support ist total klasse. Klare Weiterempfehlung!',
       image: 'assets/icons/placeholder.png'
     },
     {
       id: 2,
-      name: 'Martin Mustermann',
-      text: 'Great service and friendly staff. Highly recommend!',
-      image: 'assets/icons/placeholder.png'
-    },
-    {
-      id: 1,
-      name: 'John Doe',
-      text: 'Great service and friendly staff. Highly recommend!',
-      image: 'assets/icons/placeholder.png'
-    },
-    {
-      id: 2,
-      name: 'Martin Mustermann',
-      text: 'Great service and friendly staff. Highly recommend!',
+      name: 'Nadjy P.',
+      text: 'Die Zusammenarbeit mit dir in der Weiterbildung bedeutet mir viel. Du bist hilfsbereit, erklärst geduldig und wir finden gemeinsam Lösungen. Das Lernen mit dir motiviert mich und macht auch schwierige Themen für mich leichter. Dafür danke ich dir :)',
       image: 'assets/icons/placeholder.png'
     }
   ];
