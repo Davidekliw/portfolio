@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SkillIconBoxComponent } from "./skill-icon-box/skill-icon-box.component";
 import { CommonModule } from '@angular/common';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
@@ -11,4 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SkillsComponent {
 
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

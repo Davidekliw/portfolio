@@ -14,4 +14,7 @@ export class AboveTheFoldComponent {
   name = environment.name;
   profession = environment.profession;
 
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
