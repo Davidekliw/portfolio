@@ -1,17 +1,57 @@
 <div *ngFor="let project of projects; let i = index">
     <div class="projectBox" [ngClass]="{'reverseRow': i % 2 !== 0}">
-        <img [src]="project.image" alt="">
+        <div class="laptop" #laptopEl>
+            <svg viewBox="0 0 1200 700" role="img" aria-label="Project mockup">
+                <defs>
+                    <clipPath id="screenClip">
+                        <rect x="250" y="90" width="700" height="420" rx="18" />
+                    </clipPath>
+                    <linearGradient id="glare" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="white" stop-opacity="0.18" />
+                        <stop offset="0.6" stop-color="white" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+                <ellipse cx="600" cy="610" rx="430" ry="38" fill="black" opacity="0.25" />
+                <g class="base">
+                    <rect x="360" y="545" width="480" height="16" rx="8" fill="#5f6672" opacity="0.55" />
+                    <path d="M220 565 L980 565 L940 610 L260 610 Z" fill="#bdbdbd" opacity="0.95" />
+                    <path d="M260 610 L940 610" stroke="#7b7b7b" stroke-width="8" opacity="0.85" />
+                    <path d="M220 565 L260 610" stroke="#8a8f99" stroke-width="6" opacity="0.65" />
+                    <path d="M980 565 L940 610" stroke="#8a8f99" stroke-width="6" opacity="0.65" />
+                    <path d="M520 610 L680 610 L650 635 L550 635 Z" fill="#2a2f3a" opacity="0.9" />
+                    <rect x="300" y="575" width="600" height="4" rx="2" fill="#7C28BD" opacity="0.35" />
+                    <rect x="535" y="585" width="130" height="18" rx="9" fill="#ffffff" opacity="0.28" />
+                </g>
+                <g class="lid">
+                    <rect x="220" y="50" width="760" height="500" rx="28" fill="#1c1c1c" />
+                    <rect x="235" y="65" width="730" height="470" rx="22" fill="#2a2a2a" />
+                    <image [attr.href]="project.image" [attr.xlink:href]="project.image" x="250" y="90" width="700"
+                        height="420" preserveAspectRatio="xMidYMid meet" clip-path="url(#screenClip)"/>
+                    <rect x="250" y="90" width="700" height="420" rx="18" fill="url(#glare)"
+                        clip-path="url(#screenClip)" />
+                </g>
+            </svg>
+        </div>
         <div class="discriptionBox" [ngClass]="{'changeTextAlignment': i % 2 !== 0}">
             <div>
                 <h3 class="changeColor">{{ project.title }}</h3>
                 <h4>{{ project.technologies }}</h4>
-                <div>{{ project.description }}
+                <div>
+                    @if (!isEN) {
+                    {{ project.descriptionDE }}
+                    }
+                    @else {
+                    {{ project.descriptionEN }}
+                    }
                 </div>
             </div>
             <div class="buttonsBox" [ngClass]="{'changeButtonAlignment': i % 2 !== 0}">
-                <a class="button buttonColor" [href]="project.link" target="_blank" rel="noopener noreferrer">Live test</a>
-                <a *ngIf="project.gitlink" class="button buttonWithoutColor" [href]="project.gitlink" target="_blank" rel="noopener noreferrer">Github</a>
+                <a class="button buttonColor" [href]="project.link" target="_blank" rel="noopener noreferrer">Live
+                    test</a>
+                <a *ngIf="project.gitlink" class="button buttonWithoutColor" [href]="project.gitlink" target="_blank"
+                    rel="noopener noreferrer">Github</a>
             </div>
+            <!-- <img src="assets/img/join.png" alt=""> -->
         </div>
     </div>
 </div>
