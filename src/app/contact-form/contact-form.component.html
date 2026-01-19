@@ -43,9 +43,14 @@
                     </span>
                     }
                 </div>
-                <div *ngIf="fieldActiveInvalid('name')" class="error">
-                    <div *ngIf="name?.errors?.['required']">{{ "errors.nameReq" | translate }}</div>
-                    <div *ngIf="name?.errors?.['minlength']">{{ "errors.moreAs2Characters" | translate }}</div>
+                @if (fieldActiveInvalid('name')) {
+                <div class="error">
+                    @if (name?.errors?.['required']) {
+                    <div>{{ "errors.nameReq" | translate }}</div>
+                    }
+                    @if (name?.errors?.['minlength']) {
+                    <div>{{ "errors.moreAs2Characters" | translate }}</div>
+                    }
                 </div>
             </div>
             <div class="hintBox">
@@ -72,8 +77,11 @@
                     </span>
                     }
                 </div>
-                <div *ngIf="fieldActiveInvalid('email')" class="error">
-                    <div *ngIf="email?.errors?.['required']">{{ "errors.mailReq" | translate }}</div>
+                @if (fieldActiveInvalid('email')) {
+                <div class="error">
+                    @if (email?.errors?.['required']) {
+                    <div>{{ "errors.mailReq" | translate }}</div>
+                    }
                 </div>
             </div>
             <div class="bottomContactBoxContainer">
@@ -101,8 +109,14 @@
                         </span>
                         }
                     </div>
-                    <div *ngIf="fieldActiveInvalid('subject')" class="error">
-                        <div *ngIf="subject?.errors?.['required']">{{ "errors.textReq" | translate }}</div>
+                    @if (fieldActiveInvalid('subject')) {
+                    <div class="error">
+                        @if (subject?.errors?.['required']) {
+                        <div>{{ "errors.textReq" | translate }}</div>
+                        }
+                        @if (subject?.errors?.['minlength']) {
+                        <div>{{ "errors.moreAs2Characters" | translate }}</div>
+                        }
                     </div>
                 </div>
 
