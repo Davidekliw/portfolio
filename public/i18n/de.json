@@ -43,9 +43,9 @@
     "errors": {
         "nameReq": "Ein Name wird benötigt.",
         "moreAs2Characters": "Mindestens 2 Zeichen eingeben.",
-        "mailReq": "Bitte geben Sie ihre gültige E-Mailadresse an.",
-        "textReq": "Hier bitte Ihre Nachricht an mich eingeben.",
-        "privacy": "Bitte stimmen Sie der Datenschutzerklärung zu."
+        "mailReq": "Bitte gib deine gültige E-Mailadresse an.",
+        "textReq": "Hier bitte deine Nachricht an mich eingeben.",
+        "privacy": "Bitte stimme der Datenschutzerklärung zu."
     },
     "footer": {
         "legal": "Datenschutzerklärung"
