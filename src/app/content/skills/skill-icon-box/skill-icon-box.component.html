@@ -1,6 +1,8 @@
 <div class="skillList">
-    <div class="skill" *ngFor="let skill of skills">
-        <img [src]="skill.icon" [alt]="skill.name" />
-        <div class="skillName">{{ skill.name }}</div>
+    @for (skill of skills; track $index; let last = $last) {
+    <div class="skill">
+        <img [src]="skill.icon" [alt]="skill.name" [class.last]="last" />
+        <div class="skillName" [class.last]="last">{{ skill.name }}</div>
     </div>
+    }
 </div>
