@@ -1,0 +1,53 @@
+{
+    "atf": {
+        "iam": "",
+        "button": "Let´s talk!",
+        "profession": "FRONTEND ENTWICKLER"
+    },
+    "about": {
+        "title": "Über mich",
+        "someInfo": "Ich bin Softwareentwickler, weil ich es mag, Dinge entstehen zu lassen, die am Ende wirklich funktionieren und einen Mehrwert schaffen. Besonders motiviert mich zu sehen, was aus einer Idee werden kann – von den ersten Gedanken bis zum fertigen Projekt. Mir ist wichtig, dass am Ende nicht nur etwas gut aussieht, sondern auch zuverlässig läuft.",
+        "from": "Ich komme aus Südthüringen. Remote-Arbeit liegt mir am meisten, aber Termine und Abstimmungen direkt beim Kunden sind für mich eine willkommene Abwechslung.",
+        "toKnowNew": "Diese Website ist ein Ergebnis meiner Weiterbildung zum Softwareentwickler und zeigt, wie gerne ich Neues lerne. Als nächstes folgt der Backend-Teil.",
+        "problemSolvingText": "Ich arbeite strukturiert, geduldig und ausdauernd – am liebsten mit klaren Vorgaben. Lösungen selbst zu entwickeln macht mir Spaß, und gleichzeitig schätze ich es, wenn man sich im Team kurz abstimmen oder Fragen klären kann."
+    },
+    "skills": {
+        "title": "Fähigkeiten",
+        "skills": "Skills",
+        "show": "In meinen Projekten nutze ich verschiedene Technologien – von Frontend bis API-Anbindung.",
+        "before": "Fehlt dir",
+        "highlight": "noch etwas",
+        "reveal": "Ich lerne mich schnell in neue Tools und Frameworks ein und bleibe gerne am Puls der Technik.",
+        "inTouch": "Kontakt aufnehmen"
+    },
+    "projekts": {
+        "title": "Portfolio",
+        "headline": "Entdecke eine Auswahl meiner Projekte und sieh meine Fähigkeiten in Aktion."
+    },
+    "contact": {
+        "title": "Kontakt",
+        "headline": "Brauchst du einen Frontend Developer?",
+        "information": "Ich helfe dir dabei, moderne, schnelle und saubere Web-Oberflächen umzusetzen.",
+        "secondInformation": "Ich freue mich auf deine Nachricht.",
+        "thirdInformation": "Schreib mir!",
+        "send": "Absenden :)",
+        "before": "Ich habe die",
+        "privacy": "Datenschutzbestimmungen",
+        "after": " gelesen und akzeptiere diese."
+    },
+    "placeholders": {
+        "name": "Name",
+        "email": "E-mail",
+        "message": "Nachricht"
+    },
+    "errors": {
+        "nameReq": "Ein Name wird benötigt.",
+        "moreAs2Characters": "Mindestens 2 Zeichen eingeben.",
+        "mailReq": "Bitte geben Sie ihre gültige E-Mailadresse an.",
+        "textReq": "Hier bitte Ihre Nachricht an mich eingeben.",
+        "privacy": "Bitte stimmen Sie der Datenschutzerklärung zu."
+    },
+    "footer": {
+        "legal": "Datenschutzerklärung"
+    }
+}

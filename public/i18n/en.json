@@ -1,0 +1,51 @@
+{
+    "atf": {
+        "iam": "I am",
+        "button": "Let´s talk!",
+        "profession": "FRONTEND DEVELOPER"
+    },
+    "about": {
+        "title": "About me",
+        "someInfo": "I’m a software developer because I enjoy creating things that actually work and provide real value. What motivates me most is seeing what an idea can become — from the first thoughts to a finished project. It’s important to me that the result doesn’t just look good, but also works reliably.",
+        "from": "I’m based in the south of Thuringia (Germany). Remote work suits me best, but meetings and coordination directly on-site with a client are a welcome change.",
+        "toKnowNew": "This website is a result of my training as a software developer and shows how much I enjoy learning new things. Next up is the backend part.",
+        "problemSolvingText": "I work in a structured way and I’m patient and persistent — especially when the requirements are clear. I enjoy finding solutions on my own, and at the same time I appreciate having someone to align with or ask when needed."
+    },
+    "skills": {
+        "title": "My Skills",
+        "skills": "Skills",
+        "show": "Across my projects, I use a wide range of technologies — from frontend to API integration.",
+        "before": "Looking for",
+        "highlight": "another skill",
+        "reveal": "I can quickly adapt to new tools and frameworks and I enjoy learning continuously.",
+        "inTouch": "Get in touch"
+    },
+    "projekts": {
+        "title": "Portfolio",
+        "headline": "Explore a selection of my work here - Interact with projects to see my skills in action"
+    },
+    "contact": {
+        "title": "Contact",
+        "headline": "Got a problem to solve?",
+        "information": "I’d love to help you build modern, fast and clean user interfaces. Send me a message — I’d be happy to hear from you!",
+        "send": "Send message :)",
+        "before": "I´ve read ",
+        "privacy": "privacy policy",
+        "after": " and agree to the processing of my data as outlined."
+    },
+    "placeholders": {
+        "name": "Your name",
+        "email": "Your email",
+        "message": "Your message"
+    },
+    "errors": {
+        "nameReq": "Your name is required",
+        "moreAs2Characters": "Enter at least 2 characters",
+        "mailReq": "Your email is required",
+        "textReq": "Your message is empty",
+        "privacy": "Please accept the privacy policy."
+    },
+    "footer": {
+        "legal": "Legal Notice"
+    }
+}
