@@ -27,10 +27,12 @@ a {
     text-decoration: none;
     color: var(--color-text);
     font-size: 16px;
+    cursor: pointer;
 }
 
-.imp {
-    // display: flex;
+a:hover {
+    background: linear-gradient(to right, var(--color-secondary) 0 55px, transparent 50%) bottom no-repeat;
+    background-size: 100% 3px;
 }
 
 .impMobile {
