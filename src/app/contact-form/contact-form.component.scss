@@ -1,26 +1,20 @@
+.inputFieldIcon {
+    width: 25px;
+    height: 25px;
+}
+
 .contactBox {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    // align-items: center;
-    // justify-content: center;
-    // background-color: --var(--background-color);
 }
 
 .headlineBox {
     display: flex;
     align-items: center;
-    // justify-content: center;
     gap: 32px;
 
-    .posRel {
-        position: relative;
-        left: 0px;
-    }
-
     .decorationLine {
-        // width: 100%;
-        // position: absolute;
         width: calc((100vw - 272px) / 2) !important;
         background-color: var(--color-secondary);
         height: 2px;
@@ -33,124 +27,379 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    gap: 149px;
     padding-left: 100px;
     padding-right: 100px;
     box-sizing: border-box;
+    gap: 50px;
+
+    .leftContainer {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h5 {
+            font-size: 32px;
+            font-family: Poppins;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            >div {
+                display: flex;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
 }
 
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-
-    .hintBox {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        input,
-        textarea {
-            // flex: 1;
-            // width: 100%;
-            // max-width: 617px;
-            border: 1px solid var(--color-secondary);
-            color: var(--color-text);
-            border-radius: 10px;
-            padding: 15px 25px;
-            background-color: var(--color-background);
-
-            &:hover {
-                cursor: pointer;
-                border: 1px solid var(--color-primary);
-            }
-
-            &:focus {
-                outline: none;
-                border: 1px solid var(--color-primary);
-                // box-shadow: 0 0 0 4px rgba(24,55,112,0.06);
-            }
-
-            /* Wenn Angular die ng-invalid Klasse setzt und das Feld fokussiert ist, zeige roten Rahmen */
-            &.ng-invalid:focus {
-                border-color: var(--color-warn);
-                transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
-                // animation-duration: 300ms;
-
-                // box-shadow: 0 0 0 4px rgba(255,96,96,0.12);
-            }
-
-            /* Wenn das Feld bereits berührt/validiert wurde und ungültig ist, dauerhaft rot markieren */
-            // &.ng-touched.ng-invalid {
-                // border-color: var(--color-warn);
-            // }
-        }
-    }
-
-    .boxAsRow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        >p {
-            font-size: 14px;
-            color: var(--color-text);
-            margin: 0;
-            padding: 0;
-            align-self: center;
-
-            >a {
-                color: var(--color-secondary);
-                text-decoration: none;
-
-                &hover {
-                    cursor: pointer;
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
 
     .error {
         color: var(--color-warn);
         font-size: 14px;
+        font-family: Poppins;
     }
 
-    .buttonBox {
+    .reservePlaceBox {
         display: flex;
-        align-items: center;
         justify-content: center;
+        height: 68px;
 
         .sendingButton {
             display: flex;
             align-items: center;
             justify-content: center;
-            box-sizing: content-box;
-            width: 193px;
-            // height: 28px;
+            height: 58px;
             padding: 15px 30px;
             border-radius: 10px;
             text-align: center;
             background: #B6B6B6;
             color: var(--color-text);
             font-size: 23px;
+            font-family: Poppins;
             text-wrap: nowrap;
             border: none;
-            transition: background .18s, transform .12s;
+            transition: background .18s;
         }
 
         .sendingButton.active {
             background-color: var(--color-primary);
-            border: 1px solid var(--color-primary);
             cursor: pointer;
-            transform: translateY(-2px);
 
             &:hover {
+                height: 68px;
+                width: 272px;
                 background-color: var(--color-secondary);
-                border: 1px solid var(--color-secondary);
+                // border: 1px solid var(--color-secondary);
             }
         }
+    }
+}
+
+.formContainer {
+    max-width: 617px;
+    min-width: 52%;
+    // height: 508px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 32px;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .bottomContactBoxContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        .radioBoxContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 16px;
+
+            .boxAsRow {
+                height: 52px;
+                display: flex;
+                flex-direction: column;
+
+                .radioBox {
+                    height: 27px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8PX;
+
+                    p {
+                        font-size: 14px;
+                        color: var(--color-text);
+                        margin: 0;
+                        padding: 0;
+                        align-self: center;
+
+                        >a {
+                            color: var(--color-secondary);
+                            text-decoration: none;
+
+                            &:hover {
+                                cursor: pointer;
+                                text-decoration: underline;
+                                text-decoration-thickness: 0%;
+                                text-underline-offset: 0%;
+                                text-decoration-style: solid;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hintBoxTextArea {
+            width: 100%;
+            // height: 229px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .hintBox {
+        // height: 77px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reservePlaceBox {
+        display: flex;
+        justify-content: center;
+        height: 68px;
+    }
+}
+
+
+
+// Form Field Border Styling
+// ::ng-deep {
+
+//     // Verstecke den äußeren Border und Outline
+//     .mdc-text-field--outlined {
+//         border: none !important;
+//         outline: none !important;
+//         box-shadow: none !important;
+//     }
+
+//     // Verstecke auch potentielle Container Borders
+//     .mdc-text-field {
+//         border: none !important;
+//         outline: none !important;
+//     }
+
+//     // Standard Border - Secondary Farbe (nur outer border)
+//     .mdc-notched-outline__leading {
+//         border-color: var(--color-secondary) !important;
+//     }
+
+//     .mdc-notched-outline__notch {
+//         border-color: transparent !important;
+//         border-top: none !important;
+//     }
+
+//     .mdc-notched-outline__trailing {
+//         border-color: var(--color-secondary) !important;
+//     }
+
+//     // Verstecke den Underline
+//     .mdc-line-ripple::after {
+//         border-bottom-color: transparent !important;
+//     }
+
+//     // Hover - Primary Farbe
+//     .mdc-text-field--outlined:hover .mdc-notched-outline__leading {
+//         border-color: var(--color-primary) !important;
+//     }
+
+//     .mdc-text-field--outlined:hover .mdc-notched-outline__notch {
+//         border-color: transparent !important;
+//     }
+
+//     .mdc-text-field--outlined:hover .mdc-notched-outline__trailing {
+//         border-color: var(--color-primary) !important;
+//     }
+
+//     // Focus - Primary Farbe
+//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__leading {
+//         border-color: var(--color-primary) !important;
+//     }
+
+//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__notch {
+//         border-color: transparent !important;
+//     }
+
+//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__trailing {
+//         border-color: var(--color-primary) !important;
+//     }
+
+//     // Invalid/Error - Warn Farbe
+//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__leading {
+//         border-color: var(--color-warn) !important;
+//     }
+
+//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__notch {
+//         border-color: transparent !important;
+//     }
+
+//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__trailing {
+//         border-color: var(--color-warn) !important;
+//     }
+// }
+
+
+
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-text);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Poppins;
+    padding: 15px 25px;
+    background-color: var(--color-background);
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid var(--color-primary);
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid var(--color-primary);
+    }
+
+    &.ng-valid {
+        border-color: var(--color-primary);
+        transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
+    }
+
+    &.ng-invalid:focus {
+        border-color: var(--color-warn);
+        transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.textAreaIconPosition {
+    top: 26px;
+}
+
+.icon.success {
+    color: var(--color-primary);
+}
+
+.icon.error {
+    color: var(--color-warn);
+    font-size: 14px;
+    font-family: Poppins;
+}
+
+.icon.error .ng-invalid {
+    color: var(--color-warn);
+}
+
+.errorText {
+    font-size: 12px;
+    color: var(--color-warn);
+}
+
+// Checkbox Styling
+::ng-deep {
+
+    // Hover-Bereich (Ripple): 24x24px
+    .mat-mdc-checkbox {
+        width: 24px !important;
+        height: 24px !important;
+        --mdc-checkbox-state-layer-size: 24px;
+    }
+
+    // Standard Checkbox Background
+    .mdc-checkbox__background {
+        border-color: var(--color-primary) !important;
+        background-color: var(--color-background) !important;
+    }
+
+    // Hover auf unchecked - Background wird dunkler
+    .mat-mdc-checkbox:hover .mdc-checkbox__background {
+        background-color: rgba(24, 55, 113, 1) !important;
+    }
+
+    // Touch-Target: 24x24px
+    .mat-mdc-checkbox-touch-target {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    // Ripple für Hover-Effekt
+    .mdc-checkbox__ripple {
+        width: 24px !important;
+        height: 24px !important;
+        background-color: rgba(24, 55, 113, 1) !important;
+        opacity: 0 !important;
+        transition: opacity 0.2s ease-in-out !important;
+    }
+
+    // Hover Effekt - Ripple sichtbar machen
+    .mat-mdc-checkbox:hover .mdc-checkbox__ripple {
+        background-color: rgba(24, 55, 113, 1) !important;
+        opacity: 1 !important;
+    }
+
+    // Checked Checkbox Hover
+    .mat-mdc-checkbox-checked:hover .mdc-checkbox__background {
+        background-color: #183771 !important;
+    }
+
+    // Ripple bei checked
+    .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__ripple {
+        background-color: #183771 !important;
+    }
+
+    // Checkmark Häkchen Farbe - GRÜN
+    .mdc-checkbox__checkmark {
+        color: var(--color-primary) !important;
+    }
+
+    // Fokus Effekt
+    .mdc-checkbox__native-control:focus~.mdc-checkbox__background {
+        border-color: var(--color-primary) !important;
     }
 }
 
@@ -158,74 +407,40 @@
     .contentBox {
         padding-left: 50px;
         padding-right: 50px;
-        gap: 50px;
+        gap: 30px;
     }
 }
 
 @media (max-width: 800px) {
     .contentBox {
         flex-direction: column;
+        align-items: center;
         padding-left: 24px;
         padding-right: 24px;
         gap: none;
     }
 }
 
+@media (max-width: 600px) {
 
-.radioBox {
-    cursor: pointer;
-}
+    .reservePlaceBox {
+        height: 48px;
 
-.radioBox input {
-    position: absolute;
-    opacity: 0;
-}
+        .sendingButton {
+            height: 58px;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-align: center;
+            background: #B6B6B6;
+            color: var(--color-text);
+            font-size: 16px;
+            text-wrap: nowrap;
+            border: none;
+            transition: background .18s, transform .12s;
+        }
 
-/* Grundform */
-.box {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    border: 2px solid var(--color-primary);
-    display: grid;
-    place-items: center;
-    position: relative;
-    transition: border-color .2s;
-}
-
-/* Hover-Schein */
-.box::before {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    background: rgba(24, 55, 112, 0.3);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity .2s;
-}
-
-.radioBox:hover .box::before {
-    opacity: 1;
-}
-
-/* Haken */
-.check {
-    width: 22px;
-    height: 22px;
-    stroke: var(--color-primary);
-    //   stroke-width: 3;
-    fill: var(--color-primary);
-    opacity: 0;
-    transform: scale(.6);
-    transition: .2s ease;
-}
-
-/* Checked-Zustand */
-.radioBox input:checked+.box {
-    border-color: var(--color-primary);
-}
-
-.radioBox input:checked+.box .check {
-    opacity: 1;
-    transform: scale(1);
+        &hover {
+            width: 215px;
+        }
+    }
 }

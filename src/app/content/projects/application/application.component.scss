@@ -1,5 +1,5 @@
 .projectBox {
-    height: 340px;
+    min-height: 340px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -198,4 +198,26 @@ h4 {
             }
         }
     }
+}
+
+
+
+.laptop svg {
+    width: 100%;
+    height: auto;
+}
+
+.laptop {
+    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, .35));
+}
+
+.lid {
+    transform-origin: 600px 560px;
+    /* ungefähr Scharnier */
+    transform: perspective(120000px) rotateX(-90deg);
+    transition: transform 1200ms ease;
+}
+
+.laptop.open .lid {
+    transform: perspective(120000px) rotateX(0deg);
 }
