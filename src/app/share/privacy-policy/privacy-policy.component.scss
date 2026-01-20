@@ -1,0 +1,122 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+
+    .backButton {
+        display: flex;
+        justify-content: center;
+        padding-left: 50px;
+        cursor: pointer;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: clamp(42px, 6vw, 61px);
+        color: var(--color-primary);
+          hyphens: auto;
+  overflow-wrap: anywhere;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 33px;
+        color: var(--color-secondary);
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 19px;
+        color: var(--color-secondary);
+    }
+}
+
+.headContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-end;
+
+    .shortDecorationLine {
+        max-width: 130px;
+        flex: 1;
+        height: 4px;
+        background-color: var(--color-secondary);
+    }
+
+    .longDecorationLine {
+        max-width: 500px;
+        min-width: 100px;
+        flex: 1;
+        height: 4px;
+        background-color: var(--color-secondary);
+    }
+
+    .inALineBox {
+        width: 100%;
+        max-width: 993px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+}
+
+
+.contentBox {
+    max-width: 968px;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 50px;
+    gap: 24px;
+}
+
+.textBox {
+    color: var(--secondary-color);
+}
+
+
+@media (max-width: 500px) {
+    .headContainer {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 14px;
+        padding-top: 58px;
+        padding-left: 50px;
+
+        .longDecorationLine {
+            min-width: 60px;
+        }
+    }
+
+    section {
+        .backButton {
+            padding-right: 16px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .headContainer {
+        padding-left: 30px;
+
+        .shortDecorationLine {
+            display: none;
+        }
+
+        .longDecorationLine {
+            min-width: 30px;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .headContainer {
+        .longDecorationLine {
+            min-width: 0px;
+        }
+    }
+}
