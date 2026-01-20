@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { ChangeLanguageComponent } from "./change-language/change-language.component";
 import { TranslateDirective } from '@ngx-translate/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [ChangeThemeComponent, ChangeLanguageComponent, CommonModule, TranslateDirective],
+  imports: [ChangeThemeComponent, ChangeLanguageComponent, CommonModule, TranslateDirective, RouterLink],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })

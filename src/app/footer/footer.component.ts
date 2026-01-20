@@ -3,11 +3,12 @@ import { SozialLinksComponent } from './sozial-links/sozial-links.component';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { TranslateDirective } from '@ngx-translate/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [SozialLinksComponent, CommonModule, TranslateDirective],
+  imports: [SozialLinksComponent, CommonModule, TranslateDirective, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
