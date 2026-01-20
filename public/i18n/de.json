@@ -48,6 +48,33 @@
         "privacy": "Bitte stimme der Datenschutzerklärung zu."
     },
     "footer": {
-        "legal": "Datenschutzerklärung"
+        "legal": "Impressum"
+    },
+    "imprint": {
+        "title": "Impressum",
+        "subtitle": "Impressum",
+        "titleA": "Nutzungsbedingungen",
+        "boxA": "Mit dem Zugriff auf dieses Portfolio (das „Produkt“) erkennst du die folgenden Nutzungsbedingungen sowie ggf. ergänzende Richtlinien oder Änderungen an, die von Zeit zu Zeit veröffentlicht werden können. Ich behalte mir das Recht vor, diese Bedingungen jederzeit anzupassen.",
+        "titleB": "Projektumfang und Eigentumsrechte am Produkt",
+        "boxB": "Dieses Portfolio wurde im Rahmen eines studentischen Projekts / Ausbildungsprogramms bei der Developer Akademie GmbH erstellt und dient primär Lern- und Demonstrationszwecken. Es ist nicht für eine umfangreiche geschäftliche Nutzung vorgesehen. Eine Gewähr für eine dauerhaft fehlerfreie Verfügbarkeit, Vollständigkeit oder Eignung für bestimmte Zwecke kann daher nicht übernommen werden. Das zugrunde liegende Design/Layout dieses Portfolios ist Eigentum der Developer Akademie GmbH. Eine unautorisierte Nutzung, Vervielfältigung, Veränderung oder Verbreitung des Designs/Layout ist untersagt.",
+        "titleC": "Urheberrecht",
+        "boxC": "Sofern nicht anders angegeben, liegen die Rechte an den von mir erstellten Inhalten (z. B. Texte, eigene Grafiken, Code) bei mir. Alle genannten Marken, Produktnamen und Logos sind Eigentum der jeweiligen Rechteinhaber.",
+        "titleD": "Nutzung des Produkts",
+        "boxD": "Dieses Portfolio darf ausschließlich im Rahmen der geltenden Gesetze genutzt werden. Eine Nutzung für rechtswidrige Zwecke, zur Belästigung, Bedrohung oder Einschüchterung anderer Personen ist untersagt. Für die eigene Nutzung sowie Interaktionen mit anderen Nutzern/Personen bist du selbst verantwortlich.",
+        "titleE": "Haftungsausschuss",
+        "boxE": "Dieses Portfolio wird „wie gesehen“ bereitgestellt, ohne ausdrückliche oder stillschweigende Garantien, einschließlich (aber nicht beschränkt auf) Garantien der Marktgängigkeit, Eignung für einen bestimmten Zweck oder Nichtverletzung von Rechten Dritter. Ich übernehme keine Haftung für direkte oder indirekte Schäden, Folgeschäden, entgangenen Gewinn, Datenverlust oder sonstige immaterielle Schäden, die aus der Nutzung oder der Nichtverfügbarkeit dieses Portfolios entstehen, auch dann nicht, wenn auf die Möglichkeit solcher Schäden hingewiesen wurde.",
+        "titleF": "Freistellung",
+        "boxF": "Du erklärst dich damit einverstanden, mich von allen Ansprüchen, Forderungen, Schäden, Kosten oder Verbindlichkeiten (einschließlich angemessener Anwaltskosten) freizustellen, die aus einer missbräuchlichen Nutzung dieses Portfolios oder einem Verstoß gegen diese Hinweise entstehen.",
+        "boxG": "Bei Fragen oder rechtlichen Hinweisen kontaktiere mich bitte unter:",
+        "boxH": "Datum: 19.01.2026"
+    },
+    "privacyPolicy": {
+        "title": "Datenschutzerklärung",
+        "subtitleA": "1. Verantwortlicher und Überblick",
+        "boxA": "Der Schutz deiner personenbezogenen Daten ist mir wichtig. In dieser Datenschutzerklärung informiere ich dich darüber, welche Daten beim Besuch dieser Website verarbeitet werden und zu welchem Zweck.\n\nVerantwortlich für die Datenverarbeitung:\n[Dein Name]\n[Straße Hausnummer]\n[PLZ Ort]\nDeutschland\nE-Mail: [deine@email.de]",
+        "subtitleB": "2. Hosting, Server-Logs und Zugriffszähler",
+        "boxB": "Beim Aufrufen dieser Website werden durch den Hosting-Anbieter technisch notwendige Daten verarbeitet (sogenannte Server-Logfiles). Dazu können gehören: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite/Datei, Referrer-URL, Browsertyp/-version, Betriebssystem sowie Statuscodes. Diese Verarbeitung ist erforderlich, um die Website bereitzustellen, die Sicherheit zu gewährleisten und Fehler zu analysieren.\n\nZusätzlich wird ein einfacher Zugriffszähler verwendet, der ausschließlich die Anzahl der Seitenaufrufe erfasst. Es findet keine Profilbildung statt und es werden keine Standortdaten ausgewertet.\n\nRechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).",
+        "subtitleC": "3. Kontaktformular, Local Storage und deine Rechte",
+        "boxC": "Wenn du das Kontaktformular nutzt, werden die von dir eingegebenen Daten (z. B. Name, E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung deiner Anfrage und zur Kontaktaufnahme verarbeitet. Eine Weitergabe an Dritte erfolgt nicht.\n\nDiese Website speichert eine Darstellungseinstellung (z. B. Dark/Light Theme) im Local Storage deines Browsers. Dabei werden keine personenbezogenen Daten gespeichert und es findet kein Tracking statt.\n\nDu hast nach der DSGVO u. a. das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren.\n\nStand: [Datum]"
     }
 }

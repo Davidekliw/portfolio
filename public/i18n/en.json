@@ -47,5 +47,32 @@
     },
     "footer": {
         "legal": "Legal Notice"
+    },
+    "imprint": {
+        "title": "Legal Notice",
+        "subtitle": "Imprint",
+        "titleA": "Acceptance of terms",
+        "boxA": "By accessing this portfolio (the “Product”), you acknowledge and agree to the following terms and conditions, as well as any policies, guidelines or amendments that may be presented from time to time. I reserve the right to update or change these terms at any time.",
+        "titleB": "Scope and ownership of the product",
+        "boxB": "This portfolio was developed as part of a student project / training program at Developer Akademie GmbH and is intended primarily for educational and demonstration purposes. It is not intended for extensive commercial use. Therefore, no guarantee can be given regarding continuous availability, accuracy, completeness or suitability for a particular purpose. The underlying design/layout of this portfolio is owned by Developer Akademie GmbH. Unauthorized use, reproduction, modification or distribution of the design/layout is strictly prohibited.",
+        "titleC": "Copyright",
+        "boxC": "Unless otherwise stated, all content created by me (e.g. texts, custom graphics, code) remains my intellectual property. All mentioned trademarks, product names and logos belong to their respective owners.",
+        "titleD": "Use of the product",
+        "boxD": "This portfolio may only be used for lawful purposes and in compliance with all applicable laws and regulations. Any use for illegal activities, harassment, threats or intimidation of others is prohibited. You are solely responsible for your own use and interactions with other users/people.",
+        "titleE": "Disclaimer of warranties and limitation of liability",
+        "boxE": "This portfolio is provided “as is” without warranty of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall I be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to damages for loss of profits, data loss, or other intangible losses arising out of the use of, or inability to use, this portfolio, even if advised of the possibility of such damages.",
+        "titleF": "Indemnity",
+        "boxF": "You agree to indemnify and hold me harmless from and against any claim, demand, loss, damage, cost or liability (including reasonable legal fees) arising out of your misuse of this portfolio or your breach of this Legal Notice.",
+        "boxG": "For any questions or legal notices, please contact:",
+        "boxH": "Date: 2026-01-19"
+    },
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "subtitleA": "1. Controller and overview",
+        "boxA": "Protecting your personal data is important to me. This Privacy Policy explains what data is processed when you visit this website and for what purpose.\n\nController responsible for data processing:\n[Your Name]\n[Street + house number]\n[ZIP City]\nGermany\nEmail: [your@email.com]",
+        "subtitleB": "2. Hosting, server logs and page view counter",
+        "boxB": "When you visit this website, the hosting provider may process technically necessary data (server log files). This may include: IP address, date and time of the request, requested page/file, referrer URL, browser type/version, operating system and status codes. This processing is necessary to provide the website, ensure security and stability, and analyze errors.\n\nIn addition, a simple page view counter is used that only stores the number of page visits. No user profiles are created and no location data is evaluated.\n\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest).",
+        "subtitleC": "3. Contact form, local storage and your rights",
+        "boxC": "If you use the contact form, the data you enter (e.g. name, email address, message) is processed solely to handle your request and to contact you. It is not shared with third parties.\n\nThis website stores a display preference (e.g. dark/light theme) in your browser’s local storage. No personal data is stored and no tracking is performed.\n\nUnder the GDPR, you have rights such as access, rectification, erasure, restriction of processing, data portability and the right to object. You also have the right to lodge a complaint with a data protection supervisory authority.\n\nLast updated: [Date]"
     }
 }
