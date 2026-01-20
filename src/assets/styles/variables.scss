@@ -1,69 +1,89 @@
 // root als Fallback-Theme
 :root {
-    --color-background: #141D2F;
-    --color-primary: #70E61C;
-    --color-secondary: #9747FF;
-    --color-third: #1CDAE6;
-    --color-text: #FFFFFF;
-    --color-text-active: #70E61C;
-    --color-warn: #E61C40;
+  --color-background: #141D2F;
+  --color-primary: #70E61C;
+  --color-secondary: #9747FF;
+  --color-third: #1CDAE6;
+  --color-text: #FFFFFF;
+  --color-text-active: #70E61C;
+  --color-warn: #E61C40;
 }
 
 .themeA {
-    --color-background: #141D2F;
-    --color-primary: #70E61C;
-    --color-secondary: #9747FF;
-    --color-third: #1CDAE6;
-    --color-text: #FFFFFF;
-    --color-text-active: #70E61C;
+  --color-background: #141D2F;
+  --color-primary: #4B47FF;
+  --color-secondary: #00BEE8;
+  --color-third: #1ce6b6;
+  --color-text: #FFFFFF;
+  --color-text-active: #70E61C;
 }
 
 .themeB {
-    --color-background: #141D2F;
-    --color-primary: #4B47FF;
-    --color-secondary: #00BEE8;
-    --color-third: #1ce6b6;
-    --color-text: #FFFFFF;
-    --color-text-active: #70E61C;
+  --color-background: #141D2F;
+  --color-primary: #70E61C;
+  --color-secondary: #9747FF;
+  --color-third: #1CDAE6;
+  --color-text: #FFFFFF;
+  --color-text-active: #70E61C;
 }
 
 .themeC {
-    --color-background: #141D2F;
-    --color-primary: #FF4747;
-    --color-secondary: #FA7902;
-    --color-third: #d61ce6;
-    --color-text: #FFFFFF;
-    --color-text-active: #70E61C;
+  --color-background: #141D2F;
+  --color-primary: #FF4747;
+  --color-secondary: #FA7902;
+  --color-third: #d61ce6;
+  --color-text: #FFFFFF;
+  --color-text-active: #70E61C;
 }
 
 
 @supports (color: color(display-p3 1 1 1)) {
   :root {
-    --color-primary: color(display-p3 0.439 0.902 0.110); /* #70E61C */
-    --color-secondary: color(display-p3 0.592 0.278 1.000); /* #9747FF */
-    --color-third: color(display-p3 0.110 0.854 0.902); /* #1CDAE6 */
-    --color-warn: color(display-p3 0.902 0.110 0.251); /* #E61C40 */
-    --color-text-active: color(display-p3 0.439 0.902 0.110); /* #70E61C */
+    --color-primary: color(display-p3 0.439 0.902 0.110);
+    /* #70E61C */
+    --color-secondary: color(display-p3 0.592 0.278 1.000);
+    /* #9747FF */
+    --color-third: color(display-p3 0.110 0.854 0.902);
+    /* #1CDAE6 */
+    --color-warn: color(display-p3 0.902 0.110 0.251);
+    /* #E61C40 */
+    --color-text-active: color(display-p3 0.439 0.902 0.110);
+    /* #70E61C */
   }
 
+
   .themeA {
-    --color-primary: color(display-p3 0.439 0.902 0.110); /* #70E61C */
-    --color-secondary: color(display-p3 0.592 0.278 1.000); /* #9747FF */
-    --color-third: color(display-p3 0.110 0.854 0.902); /* #1CDAE6 */
-    --color-text-active: color(display-p3 0.439 0.902 0.110); /* #70E61C */
+    --color-primary: color(display-p3 0.294 0.278 1.000);
+    /* #4B47FF */
+    --color-secondary: color(display-p3 0.000 0.745 0.909);
+    /* #00BEE8 */
+    --color-third: color(display-p3 0.110 0.902 0.713);
+    /* #1ce6b6 */
+    --color-text-active: color(display-p3 0.294 0.278 1.000);
+    /* #4B47FF */
   }
 
   .themeB {
-    --color-primary: color(display-p3 0.294 0.278 1.000); /* #4B47FF */
-    --color-secondary: color(display-p3 0.000 0.745 0.909); /* #00BEE8 */
-    --color-third: color(display-p3 0.110 0.902 0.713); /* #1ce6b6 */
-    --color-text-active: color(display-p3 0.294 0.278 1.000); /* #4B47FF */
+    --color-primary: color(display-p3 0.439 0.902 0.110);
+    /* #70E61C */
+    --color-secondary: color(display-p3 0.592 0.278 1.000);
+    /* #9747FF */
+    --color-third: color(display-p3 0.110 0.854 0.902);
+    /* #1CDAE6 */
+    --color-text-active: color(display-p3 0.439 0.902 0.110);
+    /* #70E61C */
   }
 
+
+
   .themeC {
-    --color-primary: color(display-p3 1.000 0.278 0.278); /* #FF4747 */
-    --color-secondary: color(display-p3 0.980 0.474 0.008); /* #FA7902 */
-    --color-third: color(display-p3 0.839 0.110 0.902); /* #d61ce6 */
-    --color-text-active: color(display-p3 1.000 0.278 0.278); /* #FF4747 */
+    --color-primary: color(display-p3 1.000 0.278 0.278);
+    /* #FF4747 */
+    --color-secondary: color(display-p3 0.980 0.474 0.008);
+    /* #FA7902 */
+    --color-third: color(display-p3 0.839 0.110 0.902);
+    /* #d61ce6 */
+    --color-text-active: color(display-p3 1.000 0.278 0.278);
+    /* #FF4747 */
   }
 }
