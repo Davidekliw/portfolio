@@ -11,7 +11,8 @@
         font-size: 18px;
         font-weight: 400;
         border-radius: 10px;
-        transition: background-color 0.15s ease;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+
     }
 
     &>button:hover {
@@ -26,16 +27,15 @@
         font-weight: bold;
         cursor: default;
     }
+
+    &>button.active:hover {
+        background-color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        cursor: default;
+    }
+
+    &>button:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
 }
-
-// @media (max-width: 670px) {
-//     .langButtons {
-//         display: none;
-//     }
-// }
-
-// @media (max-width: 540px) {
-//     .langButtons {
-//         display: flex;
-//     }
-// }

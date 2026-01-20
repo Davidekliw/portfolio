@@ -1,3 +1,6 @@
 <div class="themeButtons">
-    <button *ngFor="let theme of themes" [class.active]="selected === theme" (click)="toggleTheme(theme)">{{ theme.slice(-1) }}</button>
+    <button *ngFor="let theme of themes" [ngClass]="[theme, selected === theme ? 'active disabled' : '' ]"
+        (click)="toggleTheme(theme)">
+        <span class="shine"></span>
+    </button>
 </div>

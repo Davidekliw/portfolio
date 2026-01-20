@@ -1,8 +1,5 @@
 <div class="navBar">
-    <div class="logoBox" (click)="scrollTo('start')">
-        <!-- <a href="">{{ fname }}</a> -->
-        <!-- <img class="logo" src="assets/icons/test/logoCurrent.svg" alt="{{ fname }}"> -->
-        <!-- <img class="logo" src="assets/icons/test/Zeichnung ohne d ohne l.svg" alt="{{ fname }}"> -->
+    <div class="logoBox" routerLink="/" (click)="scrollTo('start')">
         <svg viewBox="0 160 290 120" aria-label="Logo David Wilke" role="img">
             <path fill-rule="evenodd" fill="var(--color-primary)"
                 d="m 131.20951,175.30814 26.44183,89.94185 15.89151,0.0165 15.8585,-0.0165 13.95781,-67.73333 h -16.83928 l -12.95322,51.85833 -26.48215,-74.06685 z m 45.00299,22.20852 18.52082,67.73333 15.89151,0.0165 15.8585,-0.0165 18.53733,-89.94185 h -15.875 l -18.53734,74.06685 -18.52082,-51.85833 z m 68.45977,66.25721 0.15445,-65.90521 16.91121,0.12133 -0.01,65.78388 z m 23.21052,-0.58652 c -0.36289,-2.34681 -0.16871,-87.47509 -0.10213,-87.77459 l 16.91101,-0.1211 -0.11537,73.81484 c 0,0 0.0547,0.004 0.0567,0.003 -0.0567,-0.003 -0.0567,14.66451 -0.0567,14.66451 v 0 h -16.69347 z m -5.62577,-71.43815 -15.32946,-0.26829 -0.36509,-2.28152 2.91995,-13.42068 2.55487,-0.40262 h 10.70632 l -0.12166,15.97058 z" />
@@ -38,8 +35,9 @@
                 translate="skills.skills"></a>
             <a (click)="activateHighlight('portfolio')" [class.active]="selected === 'portfolio'"
                 href="#portfolio">Portfolio</a>
-            <app-change-language></app-change-language>
         </div>
+        <div class="settingsSeparator"></div>
+        <app-change-language></app-change-language>
         <app-change-theme></app-change-theme>
     </div>
 </div>
