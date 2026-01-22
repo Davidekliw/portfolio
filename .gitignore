@@ -74,3 +74,4 @@ Thumbs.db
 # Own ignores
 /src/assets/icons/test
 /src/assets/scripts/sendMail.php
+/tests
