@@ -1,25 +1,24 @@
-<section class="contactBox">
-    <div class="headlineBox">
+<section class="contactBox flexColumn">
+    <div class="headlineBox flexAlignCenter">
         <div class="decorationLine"></div>
         <h2 [translate]="'contact.title'"></h2>
     </div>
-    <div class="contentBox">
-        <div class="leftContainer">
+    <div class="contentBox flexRow">
+        <div class="leftContainer flexColumn">
             <h5 [translate]="'contact.headline'"></h5>
-            <div style="gap: 16px;">
-                <p [translate]="'contact.information'">
-                </p>
-                <div>
-                    <p [translate]="'contact.secondInformation'"></p>&nbsp;
-                    <b>
-                        <p [translate]="'contact.thirdInformation'"></p>
-                    </b>
+            <div class="flexColumn gap16">
+                <p [translate]="'contact.information'"></p>
+                <div class="textInOneLine">
+                    <span [translate]="'contact.secondInformation'">
+                        &nbsp;
+                        <b [translate]="'contact.thirdInformation'"></b>
+                    </span>
                 </div>
             </div>
         </div>
-        <form class="formContainer" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-            <div class="hintBox">
-                <div style="position: relative;">
+        <form class="formContainer flexColumn" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="hintBox flexColumn">
+                <div class="posRel">
                     <input formControlName="name" id="name" name="name" [placeholder]=" 'placeholders.name' | translate"
                         autocomplete="name" (focus)="setActive('name')" (blur)="clearActive('name')">
                     @if (showError(name)) {
@@ -51,8 +50,8 @@
                 </div>
                 }
             </div>
-            <div class="hintBox">
-                <div style="position: relative;">
+            <div class="hintBox flexColumn">
+                <div class="posRel">
                     <input formControlName="email" id="email" name="email"
                         [placeholder]=" 'placeholders.email' | translate" autocomplete="email"
                         (focus)="setActive('email')" (blur)="clearActive('email')">
@@ -82,9 +81,9 @@
                 </div>
                 }
             </div>
-            <div class="bottomContactBoxContainer">
-                <div class="hintBoxTextArea">
-                    <div style="position: relative;">
+            <div class="bottomContactBoxContainer flexColumn">
+                <div class="hintBoxTextArea flexColumn">
+                    <div class="posRel">
                         <textarea cols="50" rows="8" formControlName="subject" id="subject" name="subject"
                             [placeholder]=" 'placeholders.message' | translate" (focus)="setActive('subject')"
                             (blur)="clearActive('subject')"></textarea>
@@ -117,9 +116,9 @@
                     </div>
                     }
                 </div>
-                <div class="radioBoxContainer">
-                    <div class="boxAsRow">
-                        <div class="radioBox">
+                <div class="radioBoxContainer flexColumn">
+                    <div class="boxAsRow flexColumn">
+                        <div class="radioBox flexAlignCenter">
                             <mat-checkbox formControlName="agree" id="agree" name="agree">
                             </mat-checkbox>
                             <p>{{ "contact.before" | translate }}
@@ -127,14 +126,14 @@
                                 {{ "contact.after" | translate }}
                             </p>
                         </div>
-                        <div class="hintBox">
+                        <div class="hintBox flexColumn">
                             @if (agree?.invalid && (agree?.touched || agree?.dirty)) {
                             <mat-hint class="error">{{ "errors.privacy" | translate }}</mat-hint>
                             }
                         </div>
                     </div>
                     <div class="reservePlaceBox">
-                        <button class="sendingButton" [class.active]="form.valid" type="submit"
+                        <button class="sendingButton flexCenter" [class.active]="form.valid" type="submit"
                             [translate]="'contact.send'"></button>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
-<div class="skillList">
+<div class="skillList flexCenter">
     @for (skill of skills; track $index; let last = $last) {
-    <div class="skill">
+    <div class="skill FlexAlignCenter">
         <img [src]="skill.icon" [alt]="skill.name" [class.last]="last" />
         <div class="skillName" [class.last]="last">{{ skill.name }}</div>
     </div>

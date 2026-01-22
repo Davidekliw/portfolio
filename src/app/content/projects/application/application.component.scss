@@ -1,9 +1,6 @@
 .projectBox {
     min-height: 340px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    // align-items: center;
     justify-content: flex-end;
     gap: 35px;
 
@@ -13,21 +10,15 @@
 
     .discriptionBox {
         width: 513px;
-        // display: flex;
-        // flex-direction: column;
-        // flex: 1;
-        // text-align: start;
         gap: 30px;
+        flex: 1;
 
         &.changeTextAlignment {
             text-align: end;
         }
 
         .buttonsBox {
-            display: flex;
-            flex-direction: row;
             gap: 86px;
-            // margin-top: 40px;
             justify-content: flex-start;
 
             &.changeButtonAlignment {
@@ -35,15 +26,13 @@
             }
 
             .button {
+                max-width: 152px;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                max-width: 152px;
                 flex: 1;
                 height: 58px;
-                // border: 1px solid var(--color-primary);
                 color: var(--color-text);
-                // background-color: var(--color-background);
                 font-size: 18px;
                 font-weight: 400;
                 border-radius: 10px;
@@ -57,7 +46,6 @@
             }
 
             .buttonWithoutColor {
-                // background-color: var(--color-secondary);
                 border: 1px solid var(--color-primary);
             }
 
@@ -96,18 +84,27 @@
         }
 
     }
+}
 
-    div {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        gap: 15px;
-    }
+.laptop svg {
+    width: 100%;
+    height: auto;
+}
 
-    img {
-        width: 100%;
-        max-width: 620px;
-    }
+.laptop {
+    flex: 1;
+    gap: 15px;
+    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, .35));
+}
+
+.lid {
+    transform-origin: 600px 560px;
+    transform: perspective(120000px) rotateX(-90deg);
+    transition: transform 1200ms ease;
+}
+
+.laptop.open .lid {
+    transform: perspective(120000px) rotateX(0deg);
 }
 
 h3 {
@@ -117,11 +114,6 @@ h3 {
     margin: 0;
 }
 
-.changeColor {
-    display: inline;
-    color: var(--color-secondary);
-}
-
 h4 {
     font-size: 23px;
     font-weight: 400;
@@ -129,17 +121,15 @@ h4 {
     color: var(--color-primary);
 }
 
-.gap-30 {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.changeColor {
+    display: inline;
+    color: var(--color-secondary);
 }
+
 
 @media (max-width: 1000px) {
     .projectBox {
         height: auto;
-        // width: 100%;
-        // display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -154,22 +144,14 @@ h4 {
         .discriptionBox {
             width: 100%;
             max-width: 513px;
-            // display: flex;
-            // flex-direction: column;
-            // flex: 1;
-            // text-align: start;
-            // gap: 30px;
 
             &.changeTextAlignment {
                 text-align: center;
             }
 
             .buttonsBox {
-                display: flex;
-                flex-direction: row;
-                gap: 86px;
-                // margin-top: 40px;
                 justify-content: center;
+                gap: 86px;
 
                 &.changeButtonAlignment {
                     justify-content: center;
@@ -178,7 +160,6 @@ h4 {
 
             .buttonsBox .buttonColor:only-child {
                 margin: 0 auto;
-                /* zentriert den Einzelbutton/Link */
             }
         }
     }
@@ -198,26 +179,4 @@ h4 {
             }
         }
     }
-}
-
-
-
-.laptop svg {
-    width: 100%;
-    height: auto;
-}
-
-.laptop {
-    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, .35));
-}
-
-.lid {
-    transform-origin: 600px 560px;
-    /* ungefähr Scharnier */
-    transform: perspective(120000px) rotateX(-90deg);
-    transition: transform 1200ms ease;
-}
-
-.laptop.open .lid {
-    transform: perspective(120000px) rotateX(0deg);
 }

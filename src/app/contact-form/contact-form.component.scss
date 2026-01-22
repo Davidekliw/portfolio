@@ -1,17 +1,12 @@
-.inputFieldIcon {
-    width: 25px;
-    height: 25px;
+.gap16 {
+    gap: 16px;
 }
 
 .contactBox {
-    display: flex;
-    flex-direction: column;
     gap: 40px;
 }
 
 .headlineBox {
-    display: flex;
-    align-items: center;
     gap: 32px;
 
     .decorationLine {
@@ -22,9 +17,11 @@
     }
 }
 
+.posRel {
+    position: relative;
+}
+
 .contentBox {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     padding-left: 100px;
@@ -34,25 +31,17 @@
 
     .leftContainer {
         max-width: 500px;
-        display: flex;
-        flex-direction: column;
         gap: 24px;
 
         h5 {
             font-size: 32px;
-            font-family: Poppins;
             font-weight: 700;
             margin: 0;
         }
 
-        >div {
+        .textInOneLine {
             display: flex;
-            flex-direction: column;
-            gap: 16px;
-
-            >div {
-                display: flex;
-            }
+            padding-bottom: 24px;
 
             p {
                 margin: 0;
@@ -62,11 +51,18 @@
 }
 
 .formContainer {
+    max-width: 617px;
+    min-width: 52%;
+    flex: 1;
+    gap: 32px;
+
+    mat-form-field {
+        width: 100%;
+    }
 
     .error {
         color: var(--color-warn);
         font-size: 14px;
-        font-family: Poppins;
     }
 
     .reservePlaceBox {
@@ -75,9 +71,6 @@
         height: 68px;
 
         .sendingButton {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             height: 58px;
             padding: 15px 30px;
             border-radius: 10px;
@@ -85,8 +78,7 @@
             background: #B6B6B6;
             color: var(--color-text);
             font-size: 23px;
-            font-family: Poppins;
-            text-wrap: nowrap;
+            white-space: nowrap;
             border: none;
             transition: background .18s;
         }
@@ -99,48 +91,25 @@
                 height: 68px;
                 width: 272px;
                 background-color: var(--color-secondary);
-                // border: 1px solid var(--color-secondary);
             }
         }
     }
-}
-
-.formContainer {
-    max-width: 617px;
-    min-width: 52%;
-    // height: 508px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 32px;
-
-    mat-form-field {
-        width: 100%;
-    }
 
     .bottomContactBoxContainer {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         gap: 16px;
 
         .radioBoxContainer {
             width: 100%;
-            display: flex;
-            flex-direction: column;
             flex: 1;
             gap: 16px;
 
             .boxAsRow {
                 height: 52px;
-                display: flex;
-                flex-direction: column;
 
                 .radioBox {
                     height: 27px;
-                    display: flex;
-                    align-items: center;
-                    gap: 8PX;
+                    gap: 8px;
 
                     p {
                         font-size: 14px;
@@ -168,105 +137,14 @@
 
         .hintBoxTextArea {
             width: 100%;
-            // height: 229px;
-            display: flex;
-            flex-direction: column;
             gap: 10px;
         }
     }
 
     .hintBox {
-        // height: 77px;
-        display: flex;
-        flex-direction: column;
         gap: 10px;
     }
-
-    .reservePlaceBox {
-        display: flex;
-        justify-content: center;
-        height: 68px;
-    }
 }
-
-
-
-// Form Field Border Styling
-// ::ng-deep {
-
-//     // Verstecke den äußeren Border und Outline
-//     .mdc-text-field--outlined {
-//         border: none !important;
-//         outline: none !important;
-//         box-shadow: none !important;
-//     }
-
-//     // Verstecke auch potentielle Container Borders
-//     .mdc-text-field {
-//         border: none !important;
-//         outline: none !important;
-//     }
-
-//     // Standard Border - Secondary Farbe (nur outer border)
-//     .mdc-notched-outline__leading {
-//         border-color: var(--color-secondary) !important;
-//     }
-
-//     .mdc-notched-outline__notch {
-//         border-color: transparent !important;
-//         border-top: none !important;
-//     }
-
-//     .mdc-notched-outline__trailing {
-//         border-color: var(--color-secondary) !important;
-//     }
-
-//     // Verstecke den Underline
-//     .mdc-line-ripple::after {
-//         border-bottom-color: transparent !important;
-//     }
-
-//     // Hover - Primary Farbe
-//     .mdc-text-field--outlined:hover .mdc-notched-outline__leading {
-//         border-color: var(--color-primary) !important;
-//     }
-
-//     .mdc-text-field--outlined:hover .mdc-notched-outline__notch {
-//         border-color: transparent !important;
-//     }
-
-//     .mdc-text-field--outlined:hover .mdc-notched-outline__trailing {
-//         border-color: var(--color-primary) !important;
-//     }
-
-//     // Focus - Primary Farbe
-//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__leading {
-//         border-color: var(--color-primary) !important;
-//     }
-
-//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__notch {
-//         border-color: transparent !important;
-//     }
-
-//     .mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline__trailing {
-//         border-color: var(--color-primary) !important;
-//     }
-
-//     // Invalid/Error - Warn Farbe
-//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__leading {
-//         border-color: var(--color-warn) !important;
-//     }
-
-//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__notch {
-//         border-color: transparent !important;
-//     }
-
-//     .mdc-text-field--outlined.mdc-text-field--invalid .mdc-notched-outline__trailing {
-//         border-color: var(--color-warn) !important;
-//     }
-// }
-
-
 
 input,
 textarea {
@@ -276,7 +154,6 @@ textarea {
     color: var(--color-text);
     border-radius: 10px;
     font-size: 16px;
-    font-family: Poppins;
     padding: 15px 25px;
     background-color: var(--color-background);
 
@@ -328,46 +205,34 @@ textarea {
 .icon.error {
     color: var(--color-warn);
     font-size: 14px;
-    font-family: Poppins;
 }
 
 .icon.error .ng-invalid {
     color: var(--color-warn);
 }
 
-.errorText {
-    font-size: 12px;
-    color: var(--color-warn);
-}
-
-// Checkbox Styling
 ::ng-deep {
 
-    // Hover-Bereich (Ripple): 24x24px
     .mat-mdc-checkbox {
         width: 24px !important;
         height: 24px !important;
         --mdc-checkbox-state-layer-size: 24px;
     }
 
-    // Standard Checkbox Background
     .mdc-checkbox__background {
         border-color: var(--color-primary) !important;
         background-color: var(--color-background) !important;
     }
 
-    // Hover auf unchecked - Background wird dunkler
     .mat-mdc-checkbox:hover .mdc-checkbox__background {
         background-color: rgba(24, 55, 113, 1) !important;
     }
 
-    // Touch-Target: 24x24px
     .mat-mdc-checkbox-touch-target {
         width: 24px !important;
         height: 24px !important;
     }
 
-    // Ripple für Hover-Effekt
     .mdc-checkbox__ripple {
         width: 24px !important;
         height: 24px !important;
@@ -376,28 +241,23 @@ textarea {
         transition: opacity 0.2s ease-in-out !important;
     }
 
-    // Hover Effekt - Ripple sichtbar machen
     .mat-mdc-checkbox:hover .mdc-checkbox__ripple {
         background-color: rgba(24, 55, 113, 1) !important;
         opacity: 1 !important;
     }
 
-    // Checked Checkbox Hover
     .mat-mdc-checkbox-checked:hover .mdc-checkbox__background {
         background-color: #183771 !important;
     }
 
-    // Ripple bei checked
     .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__ripple {
         background-color: #183771 !important;
     }
 
-    // Checkmark Häkchen Farbe - GRÜN
     .mdc-checkbox__checkmark {
         color: var(--color-primary) !important;
     }
 
-    // Fokus Effekt
     .mdc-checkbox__native-control:focus~.mdc-checkbox__background {
         border-color: var(--color-primary) !important;
     }
@@ -417,7 +277,7 @@ textarea {
         align-items: center;
         padding-left: 24px;
         padding-right: 24px;
-        gap: none;
+        gap: 0;
     }
 }
 
@@ -434,13 +294,9 @@ textarea {
             background: #B6B6B6;
             color: var(--color-text);
             font-size: 16px;
-            text-wrap: nowrap;
+            white-space: nowrap;
             border: none;
             transition: background .18s, transform .12s;
-        }
-
-        &hover {
-            width: 215px;
         }
     }
 }

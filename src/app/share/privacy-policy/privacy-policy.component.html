@@ -1,6 +1,6 @@
-<section>
-    <div class="headContainer">
-        <div (click)="goBack()" class="backButton">
+<section class="flexCenter">
+    <div class="headContainer flexRow">
+        <div (click)="goBack()" class="backButton flexJustifyCener">
             <svg class="btn" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="1" y="1" width="38" height="38" rx="19" stroke="#70E61C"
                     style="stroke:var(--color-secondary);stroke-opacity:1;" stroke-width="2" />
@@ -16,13 +16,13 @@
                 </g>
             </svg>
         </div>
-        <div class="inALineBox">
+        <div class="inALineBox flexAlignCenter">
             <div class="shortDecorationLine"></div>
             <h2 [translate]="'privacyPolicy.title'"></h2>
             <div class="longDecorationLine"></div>
         </div>
     </div>
-    <div class="contentBox">
+    <div class="contentBox flexColumn">
         <div class="textBox">
             <h4 [translate]="'privacyPolicy.subtitleA'"></h4>
             <div [translate]="'privacyPolicy.boxA'"></div>

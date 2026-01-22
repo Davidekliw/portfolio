@@ -1,17 +1,12 @@
 .footer {
-    display: flex;
     flex: 1;
     justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 20px;
 }
 
 .footerLogoBox {
-    // width: 150px;
-    display: flex;
-    flex-direction: column;
     gap: 5px;
     margin: 0;
     padding: 0;

@@ -1,14 +1,14 @@
-<div class="reviewBox">
+<div class="reviewBox flexAlignCenter">
     <div class="rightAlignBox">
-        <div class="borderBox">
-            <article class="reviewTextBox">
+        <div class="borderBox flexAlignCenter">
+            <article class="reviewTextBox flexAlignCenter">
                 <div class="textOrder">{{ reviews[current].text }}</div>
-                <div class="authorLine">
+                <div class="authorLine flexAlignCenter">
                     <div class="decorationLine"></div>
                     <div class="nameBox">{{ reviews[current].name }}</div>
                 </div>
             </article>
-            <div class="pictureBox">
+            <div class="flexCenter">
                 <div class="circleBox">
                     <img [src]="reviews[current].image" alt="">
                 </div>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="controller">
+    <div class="controller flexAlignCenter">
         <div>
             <div class="positionBox">
                 <!-- left -->

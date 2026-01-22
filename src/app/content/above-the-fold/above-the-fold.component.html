@@ -1,10 +1,9 @@
-<div class="aboveTheFold" id="start">
-    <!-- <img src="assets/icons/placeholder.png" alt="Portrait Bild"> -->
+<div class="aboveTheFold flexCenter" id="start">
     <img src="assets/icons/test/Bilder/thumbnail_582A0975_cut.PNG" alt="Portrait Bild">
-    <div class="centerBoxColumn">
-        <div class="centerBox">
+    <div class="flexCenter flexColumn gap30">
+        <div class="flexCenter flexRow">
             <div class="vertical" translate="atf.iam"></div>
-            <div class="headlines">
+            <div class="headlines flexCenter">
                 <div>
                     <h1>{{ name }}</h1>
                     <h2 translate="atf.profession"></h2>
@@ -12,7 +11,7 @@
             </div>
         </div>
         <div class="reservePlaceBox">
-            <button translate="atf.button" (click)="scrollTo('contact')"></button>
+            <button class="flexCenter" translate="atf.button" (click)="scrollTo('contact')"></button>
         </div>
     </div>
 </div>

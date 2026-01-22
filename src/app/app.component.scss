@@ -20,15 +20,12 @@ app-content {
     width: 100%;
     flex: 1;
     margin-top: 110px;
-    // margin-bottom: 291px;
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
 app-footer {
-    // position: absolute;
     bottom: 0;
     width: 100%;
     height: 291px;
@@ -42,19 +39,8 @@ app-footer {
     app-menu {
         padding-left: 50px;
         padding-right: 50px;
-        // height: 90px;
-        // padding-top: 20px;
-        // padding-bottom: 20px;
     }
 
-    // app-content {
-    //     margin-top: 90px;
-    //     margin-bottom: 200px;
-    // }
-
-    // app-footer {
-    //     height: 200px;
-    // }
 }
 
 @media (max-width: 670px) {

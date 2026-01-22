@@ -1,75 +1,40 @@
 .navBar {
     flex: 1;
-    // width: 100%;
     font-size: 23px;
     font-weight: 400;
-    display: flex;
     justify-content: space-between;
+}
+
+.burger {
+    height: 30px;
+    display: none;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 12px;
 
-    // .logoBox {
-
-    //     a {
-    //         font-size: 28px;
-    //         font-weight: 600;
-    //         color: var(--color-text);
-    //         text-align: center;
-    //     }
-
-    //     img {
-    //         color: white;
-    //         // background-color: white;
-    //         width: auto;
-    //         height: 60px;
-    //     }
-    // }
-
-    &>div {
-        // width: 100%;
-        // max-width: 524px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 24px;
-
-        .linkContainer {
-            display: flex;
-            gap: 29px;
-        }
-
-
+    >.line {
+        background-color: white;
+        width: 30px;
+        height: 2px;
     }
+}
 
-    .burger {
-        height: 30px;
-        // width: 30px;
-        display: none;
-        // position: absolute;
-        // right: 24px;
-        // top: 24px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        gap: 12px;
+.dFlex {
+    display: flex;
+}
 
-        >.line {
-            background-color: white;
-            width: 30px;
-            height: 2px;
-            // border-radius: 5.5px;
-        }
-    }
+.gap32 {
+    gap: 32px;
+}
 
-    .selectContainer {
-        display: flex;
-        align-items: center;
-        gap: 28px;
+.gap28 {
+    gap: 28px;
+}
 
-        // app-change-theme {
-        // display: block;
-        // }
-    }
+.gap24 {
+    gap: 24px;
 }
 
 a {
@@ -84,87 +49,63 @@ a:hover {
 }
 
 a.active {
-    // border-bottom: solid 2px var(--color-primary);
     color: var(--color-text-active);
     background: linear-gradient(to right, var(--color-secondary) 0 55px, transparent 50%) bottom no-repeat;
     background-size: 100% 3px;
     cursor: default;
 }
 
+.mobileMenuBackground {
+    display: none;
+    height: calc(100vh - 110px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 29px;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(66, 73, 87, 1);
+    transform: translateX(100%);
+    transition: transform 280ms ease;
 
+    .settingsSeparator {
+        width: 180px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg,
+                transparent,
+                var(--color-secondary),
+                var(--color-primary),
+                transparent);
+        opacity: 0.75;
+        margin: 18px 0;
+    }
+}
 
-.linkContainerMobile {
-    .mobileMenuBackground {
+.mobileMenuBackground.open {
+    transform: translateX(0);
+}
+
+@media (max-width:900px) {
+    .hideOnMobile {
         display: none;
-        height: calc(100vh - 110px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 29px;
-        position: absolute;
-        top: 110px;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 999;
-        background-color: rgba(66, 73, 87, 1);
-        transform: translateX(100%);
-        transition: transform 280ms ease;
-
-        >div {}
     }
-}
 
-.linkContainerMobile {
-    .mobileMenuBackground.open {
-        transform: translateX(0);
+    .burger {
+        display: flex;
     }
-}
 
-
-@media (max-width: 900px) {
-    .navBar {
-        .selectContainer {
-            display: none;
-        }
+    .mobileMenuBackground {
+        display: flex;
     }
 }
 
 @media (max-width: 535px) {
-    .navBar {
-        .logoBox {
-            width: 120px;
-
-            img {
-                height: 50px;
-            }
-        }
-
-        &>div {
-            max-width: 300px;
-            font-size: 18px;
-            gap: 16px;
-
-        }
-    }
-}
-
-@media (max-width:900px) {
-    .navBar {
-        .burger {
-            display: flex;
-        }
-
-        >div {
-            .linkContainer {
-                display: none;
-            }
-        }
-    }
-
-    .linkContainerMobile {
-        .mobileMenuBackground {
-            display: flex;
-        }
+    .logoBox {
+        width: 120px;
     }
 }

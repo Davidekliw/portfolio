@@ -1,37 +1,35 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
+/* Import local font-face declarations so the bundler resolves font files */
+@import './assets/fonts/fonts.css';
 $portfolio-primary: mat.define-palette(mat.$indigo-palette);
 $portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
 $portfolio-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $portfolio-theme: mat.define-light-theme((color: (primary: $portfolio-primary,
                 accent: $portfolio-accent,
                 warn: $portfolio-warn,
             ),
             typography: mat.define-typography-config(),
             density: 0));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include mat.all-component-themes($portfolio-theme);
-
 @import 'assets/styles/variables.scss';
+
+
+app-root {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+app-impressum {
+    width: 100%;
+}
 
 *,
 *::before,
@@ -53,22 +51,10 @@ html {
     scroll-padding-top: 110px;
 }
 
-app-root {
-    width: 100%;
-    max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
-}
-
 body {
     margin: 0;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -117,7 +103,6 @@ h4 {
     width: 150px;
     height: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
@@ -126,7 +111,6 @@ h4 {
     filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
 }
 
-/* wenn Hover endet: kurz stärker, dann aus */
 .logoBox:hover svg {
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.25));
     animation: glowOut 800ms ease-in;
@@ -144,4 +128,35 @@ h4 {
     100% {
         filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.25));
     }
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexAlignCenter {
+    display: flex;
+    align-items: center;
+}
+
+.flexJustifyCenter {
+    display: flex;
+    justify-content: center;
 }

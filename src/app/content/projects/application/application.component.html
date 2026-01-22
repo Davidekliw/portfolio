@@ -1,6 +1,6 @@
 <div *ngFor="let project of projects; let i = index">
-    <div class="projectBox" [ngClass]="{'reverseRow': i % 2 !== 0}">
-        <div class="laptop" #laptopEl>
+    <div class="projectBox flexRow" [ngClass]="{'reverseRow': i % 2 !== 0}">
+        <div class="laptop flexColumn" #laptopEl>
             <svg viewBox="0 0 1200 700" role="img" aria-label="Project mockup">
                 <defs>
                     <clipPath id="screenClip">
@@ -26,13 +26,13 @@
                     <rect x="220" y="50" width="760" height="500" rx="28" fill="#1c1c1c" />
                     <rect x="235" y="65" width="730" height="470" rx="22" fill="#2a2a2a" />
                     <image [attr.href]="project.image" [attr.xlink:href]="project.image" x="250" y="90" width="700"
-                        height="420" preserveAspectRatio="xMidYMid meet" clip-path="url(#screenClip)"/>
+                        height="420" preserveAspectRatio="xMidYMid meet" clip-path="url(#screenClip)" />
                     <rect x="250" y="90" width="700" height="420" rx="18" fill="url(#glare)"
                         clip-path="url(#screenClip)" />
                 </g>
             </svg>
         </div>
-        <div class="discriptionBox" [ngClass]="{'changeTextAlignment': i % 2 !== 0}">
+        <div class="discriptionBox flexColumn" [ngClass]="{'changeTextAlignment': i % 2 !== 0}">
             <div>
                 <h3 class="changeColor">{{ project.title }}</h3>
                 <h4>{{ project.technologies }}</h4>
@@ -45,13 +45,12 @@
                     }
                 </div>
             </div>
-            <div class="buttonsBox" [ngClass]="{'changeButtonAlignment': i % 2 !== 0}">
+            <div class="buttonsBox flexRow" [ngClass]="{'changeButtonAlignment': i % 2 !== 0}">
                 <a class="button buttonColor" [href]="project.link" target="_blank" rel="noopener noreferrer">Live
                     test</a>
                 <a *ngIf="project.gitlink" class="button buttonWithoutColor" [href]="project.gitlink" target="_blank"
                     rel="noopener noreferrer">Github</a>
             </div>
-            <!-- <img src="assets/img/join.png" alt=""> -->
         </div>
     </div>
 </div>
