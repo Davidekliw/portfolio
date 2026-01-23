@@ -13,6 +13,11 @@ import { ContactFormComponent } from "../contact-form/contact-form.component";
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss'
 })
+
+/**
+ * Main page content container.
+ * Composes all sections of the portfolio landing page.
+ */
 export class ContentComponent {
 
 }

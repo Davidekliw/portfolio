@@ -18,18 +18,31 @@ import { RouterLink } from "@angular/router";
   styleUrl: './contact-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
+/**
+ * Contact form component (Reactive Forms + Angular Material).
+ * Validates user input and provides helper functions for showing success/error states in the UI.
+ */
 export class ContactFormComponent {
 
-  private fb = inject(FormBuilder);
-  form = this.fb.group({
+  private readonly fb = inject(FormBuilder);
+
+  /** Reactive contact form definition with validation rules. */
+  readonly form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[\p{L} '’-]+$/u)]],
     email: ['', [Validators.required, Validators.email]],
     subject: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
     agree: [false, Validators.requiredTrue]
   });
+
+  /** Tracks which field is currently focused/active (used for custom UI highlighting). */
   activeField: string | null = null;
 
-  onSubmit() {
+  /**
+ * Submits the form if valid, otherwise marks all fields as touched.
+ * NOTE: Sending is not implemented yet (placeholder).
+ */
+  onSubmit(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -38,6 +51,7 @@ export class ContactFormComponent {
     console.log(this.form.value);
   }
 
+  /*shortcut accessors for form controls*/
   get name() {
     return this.form.get('name');
   }
@@ -54,26 +68,48 @@ export class ContactFormComponent {
     return this.form.get('agree');
   }
 
-  setActive(fieldName: string) {
+  /**
+   * Marks a field as active (e.g. on focus) to control UI feedback.
+   * @param fieldName Form control name
+   */
+  setActive(fieldName: string): void {
     this.activeField = fieldName;
   }
 
-  clearActive(fieldName?: string) {
+  /**
+  * Clears the active field selection (e.g. on blur).
+  * If a fieldName is provided, it only clears when it matches the current active field.
+  * @param fieldName Optional form control name
+  */
+  clearActive(fieldName?: string): void {
     if (!fieldName || this.activeField === fieldName) {
       this.activeField = null;
     }
   }
 
-  fieldActiveInvalid(fieldName: string) {
+  /**
+   * Returns true if the field is invalid and currently active (focused).
+   * Used to show "live" error states only on the active input.
+   * @param fieldName Form control name
+   */
+  fieldActiveInvalid(fieldName: string): boolean {
     const c = this.form.get(fieldName);
     return !!(c && c.invalid && this.activeField === fieldName);
   }
 
-  showError(c: AbstractControl | null) {
+  /**
+   * Returns true if a control should show an error state.
+   * @param c Form control instance
+   */
+  showError(c: AbstractControl | null): boolean {
     return !!c && c.invalid && (c.dirty || c.touched);
   }
 
-  showSuccess(c: AbstractControl | null) {
+  /**
+   * Returns true if a control should show a success state.
+   * @param c Form control instance
+   */
+  showSuccess(c: AbstractControl | null): boolean {
     return !!c && c.valid && (c.dirty || c.touched);
   }
 }

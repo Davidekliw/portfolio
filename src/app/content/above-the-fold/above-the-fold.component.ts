@@ -9,11 +9,18 @@ import { TranslateDirective } from '@ngx-translate/core';
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
+
+/**
+ * Above-the-fold hero section shown at the top of the landing page.
+ * Displays the main headline and provides a smooth scroll CTA.
+ */
 export class AboveTheFoldComponent {
 
-  name = environment.name;
+  /** Display name loaded from environment configuration */
+  readonly name = environment.name;
 
-  scrollTo(id: string) {
+  /** Scrolls smoothly to the element with the given ID */
+  scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

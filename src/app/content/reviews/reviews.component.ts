@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface Review {
+  id: number;
+  name: string;
+  text: string;
+  image: string;
+}
+
 @Component({
   selector: 'app-reviews',
   standalone: true,
@@ -8,12 +15,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.scss'
 })
+
+/** 
+ * Reviews section component.
+ * Displays a small static carousel of reviews.
+ */
 export class ReviewsComponent {
 
+  /** Current index of the displayed review. */
   current: number = 0;
 
-
-  reviews = [
+  /** Hardcoded Review data used for rendering Carousel. */
+  readonly reviews: Review[] = [
     {
       id: 0,
       name: 'Kristin Siegmund',
@@ -34,12 +47,13 @@ export class ReviewsComponent {
     }
   ];
 
-
-  next() {
+  /** Function to navigate through reviews forward. */
+  next(): void {
     this.current = (this.current + 1) % this.reviews.length;
   }
 
-  prev() {
+  /** Function to navigate through reviews backward. */
+  prev(): void {
     this.current = (this.current - 1 + this.reviews.length) % this.reviews.length;
   }
 }

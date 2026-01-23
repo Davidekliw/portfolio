@@ -9,6 +9,11 @@ import { TranslateDirective } from '@ngx-translate/core';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
+
+/**
+ * Projects section component.
+ * Wrapper for the application/projects list and its translated heading.
+ */
 export class ProjectsComponent {
 
 }

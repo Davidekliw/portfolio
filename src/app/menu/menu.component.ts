@@ -5,6 +5,7 @@ import { environment } from '../environments/environments';
 import { ChangeLanguageComponent } from "./change-language/change-language.component";
 import { TranslateDirective } from '@ngx-translate/core';
 import { RouterLink } from "@angular/router";
+import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -13,31 +14,45 @@ import { RouterLink } from "@angular/router";
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
-export class MenuComponent {
+
+/**
+ * Main navigation/menu component.
+ * Handles mobile menu open/close state, active section highlighting, and smooth scrolling.
+ */
+export class MenuComponent implements OnDestroy {
+
+  /* Access environment variable for use in template */
   fname = environment.fname;
+
+  /* Currently selected section in the menu */
   selected: string | null = null;
+
+  /* Mobile menu open/close state */
   menuOpen = false;
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     document.body.classList.remove('no-scroll');
   }
 
+  /* set the currently activate menu section for visual highlight */
   activateHighlight(section: string): void {
     this.selected = section;
-    console.log(section);
 
   }
 
-  scrollTo(id: string) {
+  /* Smoothly scroll to the section with the given id */
+  scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  toggleMenu() {
+  /* Toggle mobile menu open/close state and manage body scroll */
+  toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
     document.body.classList.toggle('no-scroll', this.menuOpen);
   }
 
-  closeMenu() {
+  /* Close the mobile menu and re-enable body scroll */
+  closeMenu(): void {
     this.menuOpen = false;
     document.body.classList.toggle('no-scroll', this.menuOpen);
   }

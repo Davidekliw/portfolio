@@ -1,3 +1,6 @@
 <div class="iconsBox">
-    <img *ngFor="let icon of icons" [src]="icon" alt="Bild">
+    <a *ngFor="let icon of icons" [href]="icon.link" [attr.aria-label]="icon.ariaLabel" target="_blank"
+        rel="noopener noreferrer" class="social-link">
+        <img [src]="icon.imgSrc" alt="" />
+    </a>
 </div>

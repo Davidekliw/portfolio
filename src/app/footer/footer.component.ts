@@ -13,11 +13,13 @@ import { RouterLink } from "@angular/router";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  name = environment.name;
-  fname = environment.fname;
-  year = environment.year;
+  /* some variables from Environment configuration */
+  readonly name = environment.name;
+  readonly fname = environment.fname;
+  readonly year = environment.year;
 
-  scrollTo(id: string) {
+  /* Smoothly scroll to the section with the given id */
+  scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -10,9 +10,15 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
+
+/**
+ * Skills section component.
+ * Displays a list of skills with icons.
+ */
 export class SkillsComponent {
 
-  scrollTo(id: string) {
+  /** Smooth-scrolls to the element with the given id. */
+  scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

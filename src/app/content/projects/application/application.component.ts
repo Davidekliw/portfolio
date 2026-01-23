@@ -1,6 +1,16 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren, OnDestroy, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../../service/language.service';
+
+interface Project {
+  title: string;
+  technologies: string;
+  descriptionDE: string;
+  descriptionEN: string;
+  image: string;
+  link: string;
+  gitlink: string;
+}
 
 @Component({
   selector: 'app-application',
@@ -9,18 +19,25 @@ import { LanguageService } from '../../../service/language.service';
   templateUrl: './application.component.html',
   styleUrl: './application.component.scss'
 })
-export class ApplicationComponent {
+
+/**
+ * Applications/projects section component.
+ * Renders project cards and animates them when they enter the viewport.
+ */
+export class ApplicationComponent implements AfterViewInit, OnDestroy {
+
+  private observer?: IntersectionObserver;
+
+  /** Project card elements observed for "enter viewport" animations. */
+  @ViewChildren('laptopEl') laptops!: QueryList<ElementRef<HTMLElement>>;
 
   constructor(public lang: LanguageService) { }
 
-  get isEN() {
-    return this.lang.getStorageInformation() === 'en';
-  }
-
-
-  @ViewChildren('laptopEl') laptops!: QueryList<ElementRef<HTMLElement>>;
-
-  ngAfterViewInit() {
+  /**
+   * Sets up an IntersectionObserver to toggle the "open" CSS class
+   * when project elements enter/leave the viewport.
+   */
+  ngAfterViewInit(): void {
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => e.target.classList.toggle('open', e.isIntersecting));
     }, {
@@ -30,7 +47,17 @@ export class ApplicationComponent {
     this.laptops.forEach(l => io.observe(l.nativeElement));
   }
 
-  projects = [
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  /* true if the current language is English */
+  get isEN(): boolean {
+    return this.lang.getStorageInformation() === 'en';
+  }
+
+  /** List of projects to be displayed in the application section. */
+  readonly projects: Project[] = [
     {
       title: 'JOIN',
       technologies: 'JavaScript, HTML, CSS',

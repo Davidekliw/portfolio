@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ThemeService {
+type Theme = 'themeA' | 'themeB' | 'themeC';
 
-  private currentClass = 'themeA';
+@Injectable({ providedIn: 'root' })
+
+/**
+ * Manages the global UI theme.
+ * Applies the theme as a CSS class on <body> and persists the selection in localStorage.
+ */
+export class ThemeService {
+  /** Default theme used when no theme is stored yet. */
+  private readonly defaultTheme: Theme = 'themeA';
 
   constructor() {
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === null) {
-      console.log('No theme found, setting default theme.');
-      document.body.classList.add(this.currentClass);
-      localStorage.setItem('theme', this.currentClass);
-    }
-    else {
-      document.body.classList.add(currentTheme);
-    }
+    const currentTheme = localStorage.getItem('theme') as Theme | null;
+    this.applyTheme(currentTheme ?? this.defaultTheme);
   }
 
-  toggleTheme(currentTheme: string) {
+  /** Activates the specified theme and saves it to localStorage. */
+  applyTheme(theme: Theme): void {
     document.body.className = '';
-    document.body.classList.add(currentTheme);
-    localStorage.setItem('theme', currentTheme);
-    console.log(currentTheme);
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  /** Toggles the selected theme. */
+  toggleTheme(currentTheme: Theme): void {
+    this.applyTheme(currentTheme);
   }
 }

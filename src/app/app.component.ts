@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
@@ -13,9 +13,20 @@ import { LanguageService } from './service/language.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = environment.title;
-  constructor(lang: LanguageService) {
-    lang.init();
+
+/**
+ * Root application component.
+ * Initializes global services (e.g. language) and renders the main layout.
+ */
+export class AppComponent implements OnInit {
+
+  /** Application title loaded from the environment configuration. */
+  readonly title = environment.title;
+
+  constructor(private lang: LanguageService) {
+  }
+
+  ngOnInit(): void {
+    this.lang.init();
   }
 }

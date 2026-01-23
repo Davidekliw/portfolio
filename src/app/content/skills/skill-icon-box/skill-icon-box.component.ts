@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { Input } from '@angular/core';
-
 
 interface Skill {
   icon: string;
@@ -16,8 +13,15 @@ interface Skill {
   templateUrl: './skill-icon-box.component.html',
   styleUrl: './skill-icon-box.component.scss'
 })
+
+/**
+ * single Skills component.
+ * Provides a static list of skill icons and labels for the skills section.
+ */
 export class SkillIconBoxComponent {
-  skills = [
+
+  /** Static skill list used for rendering icons and labels. */
+  readonly skills: Skill[] = [
     { icon: 'assets/skillIcons/JavaScript.png', name: 'JavaScript' },
     { icon: 'assets/skillIcons/html.png', name: 'HTML' },
     { icon: 'assets/skillIcons/css.png', name: 'CSS' },
@@ -43,6 +47,5 @@ export class SkillIconBoxComponent {
     // { icon: 'assets/skillIcons/Django.png', name: 'Django' },
     // { icon: 'assets/skillIcons/Ebene_1.png', name: 'Ebene 1' },
     // { icon: 'assets/skillIcons/Vue Js.png', name: 'Vue.js' },
-
   ];
 }
