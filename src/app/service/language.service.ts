@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import de from '../../../public/i18n/de.json';
 import en from '../../../public/i18n/en.json';
 
+type Lang = 'de' | 'en';
+
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private key = 'lang';
@@ -19,17 +21,17 @@ export class LanguageService {
     this.activateLanguage(saved);
   }
 
-  set(lang: 'de' | 'en') {
+  set(lang: Lang) {
     localStorage.setItem(this.key, lang);
     this.activateLanguage(lang);
   }
 
-  activateLanguage(lang: 'de' | 'en') {
+  activateLanguage(lang: Lang) {
     this.t.use(lang);
     document.documentElement.lang = lang;
   }
 
   getStorageInformation() {
-    return (localStorage.getItem(this.key) as 'de' | 'en') ?? 'de';
+    return (localStorage.getItem(this.key) as Lang) ?? 'de';
   }
 }

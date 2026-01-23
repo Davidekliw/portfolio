@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../service/language.service';
 
+type Lang = 'de' | 'en';
 
 @Component({
   selector: 'app-change-language',
@@ -18,9 +19,12 @@ export class ChangeLanguageComponent {
 
   languageOptions = ['de', 'en'] as const;
   selected = this.lang.getStorageInformation();
-  selectedToShow = this.selected.toUpperCase();
 
-  onSelectedChange(lang: 'de' | 'en') {
+  get selectedToShow(): string {
+    return this.selected.toUpperCase();
+  }
+
+  onSelectedChange(lang: Lang): void {
     this.selected = lang;
     this.lang.set(lang)
   }
