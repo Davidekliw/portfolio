@@ -14,7 +14,7 @@ export class ApplicationComponent {
   constructor(public lang: LanguageService) { }
 
   get isEN() {
-    return this.lang.get() === 'EN';
+    return this.lang.getStorageInformation() === 'en';
   }
 
 

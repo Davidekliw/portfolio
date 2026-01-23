@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OnInit } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
-import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -16,12 +14,13 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class ChangeLanguageComponent {
 
-  languageOptions = ['DE', 'EN'] as const;
-  selected = this.lang.get();
-
   constructor(public lang: LanguageService) { }
 
-  onSelectedChange(lang: 'DE' | 'EN') {
+  languageOptions = ['de', 'en'] as const;
+  selected = this.lang.getStorageInformation();
+  selectedToShow = this.selected.toUpperCase();
+
+  onSelectedChange(lang: 'de' | 'en') {
     this.selected = lang;
     this.lang.set(lang)
   }
