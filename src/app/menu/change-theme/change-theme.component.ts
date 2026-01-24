@@ -20,7 +20,7 @@ type Theme = 'themeA' | 'themeB' | 'themeC';
 export class ChangeThemeComponent implements OnInit {
 
   /** Theme Keys available for selection in UI (must match the ThemeService) */
-  readonly themes = ['themeA', 'themeB', 'themeC'];
+  readonly themes: Theme[] = ['themeA', 'themeB', 'themeC'];
 
   /** currently selected theme key used to highlight the active theme in the UI */
   selected: string = 'themeA';
