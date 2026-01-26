@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../service/language.service';
-
-type Lang = 'de' | 'en';
+import { Lang, LANGS } from '../../service/language.service';
 
 @Component({
   selector: 'app-change-language',
@@ -15,15 +14,15 @@ type Lang = 'de' | 'en';
 
 export class ChangeLanguageComponent {
 
+  /** Language options shown in the UI */
+  readonly languageOptions = LANGS;
+
+  /** currently selected language loaded from localstorage on init */
+  selected: Lang = this.lang.getStorageInformation();
+
   constructor(public lang: LanguageService) { }
 
-  languageOptions = ['de', 'en'] as const;
-  selected = this.lang.getStorageInformation();
-
-  get selectedToShow(): string {
-    return this.selected.toUpperCase();
-  }
-
+  /** Handles language change from the UI */
   onSelectedChange(lang: Lang): void {
     this.selected = lang;
     this.lang.set(lang)

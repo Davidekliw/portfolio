@@ -53,7 +53,7 @@ export class ApplicationComponent implements AfterViewInit, OnDestroy {
 
   /* true if the current language is English */
   get isEN(): boolean {
-    return this.lang.getStorageInformation() === 'en';
+    return this.lang.getStorageInformation().key === 'en';
   }
 
   /** List of projects to be displayed in the application section. */
