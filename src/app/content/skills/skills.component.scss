@@ -76,6 +76,10 @@ p {
 
 .textWithButtonBox {
     align-items: flex-end;
+
+    p {
+        padding-right: 0;
+    }
 }
 
 h4 {
