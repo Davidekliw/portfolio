@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ChangeThemeComponent } from './change-theme/change-theme.component';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { ChangeLanguageComponent } from "./change-language/change-language.component";
 import { TranslateDirective } from '@ngx-translate/core';
 import { RouterLink } from "@angular/router";
-import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -25,7 +24,7 @@ export class MenuComponent implements OnDestroy {
   fname = environment.fname;
 
   /* Currently selected section in the menu */
-  selected: string | null = null;
+  selected: string = 'aboutMe';
 
   /* Mobile menu open/close state */
   menuOpen = false;
@@ -37,7 +36,6 @@ export class MenuComponent implements OnDestroy {
   /* set the currently activate menu section for visual highlight */
   activateHighlight(section: string): void {
     this.selected = section;
-
   }
 
   /* Smoothly scroll to the section with the given id */
