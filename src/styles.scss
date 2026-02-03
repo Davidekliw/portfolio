@@ -1,7 +1,6 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-/* Import local font-face declarations so the bundler resolves font files */
 @import './assets/fonts/fonts.css';
 $portfolio-primary: mat.define-palette(mat.$indigo-palette);
 $portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
@@ -21,10 +20,8 @@ app-root {
     max-width: 1440px;
     min-height: 100vh;
     margin-top: 110px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    overflow-y: clip;
 }
 
 app-impressum {
@@ -49,6 +46,7 @@ html {
     align-items: center;
     scroll-behavior: smooth;
     scroll-padding-top: 110px;
+    overflow-x: hidden;
 }
 
 body {
@@ -98,6 +96,14 @@ h4 {
     font-style: bold;
 }
 
+.posRel {
+    position: relative;
+}
+
+.zIndex1 {
+    z-index: 1;
+}
+
 
 .logoBox {
     width: 150px;
@@ -130,7 +136,6 @@ h4 {
     }
 }
 
-
 .flex {
     display: flex;
 }
@@ -159,4 +164,10 @@ h4 {
 .flexJustifyCenter {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 1440px) {
+    body {
+        overflow: clip;
+    }
 }
