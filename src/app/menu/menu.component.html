@@ -33,8 +33,10 @@
                 translate="about.title"></a>
             <a (click)="activateHighlight('skills')" [class.active]="selected === 'skills'" href="#skills"
                 translate="skills.skills"></a>
-            <a (click)="activateHighlight('portfolio')" [class.active]="selected === 'portfolio'"
-                href="#portfolio">Portfolio</a>
+            <a href="#portfolio" (click)="activateHighlight('portfolio')"
+                [class.active]="selected === 'portfolio'">Portfolio</a>
+            <a href="#contact" (click)="activateHighlight('contact')" [class.active]="selected === 'contact'"
+                translate="contact.title"></a>
         </div>
         <div class="settingsSeparator"></div>
         <app-change-language></app-change-language>
