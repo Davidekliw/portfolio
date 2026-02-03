@@ -41,7 +41,7 @@ export class ReviewsComponent {
     },
     {
       id: 2,
-      name: 'Nadjy P.',
+      name: 'Nadja P.',
       text: 'Die Zusammenarbeit mit dir in der Weiterbildung bedeutet mir viel. Du bist hilfsbereit, erklärst geduldig und wir finden gemeinsam Lösungen. Das Lernen mit dir motiviert mich und macht auch schwierige Themen für mich leichter. Dafür danke ich dir :)',
       image: 'assets/icons/placeholder.png'
     }
