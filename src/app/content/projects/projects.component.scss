@@ -2,6 +2,15 @@
     gap: 32px;
 }
 
+.glow {
+    max-width: 827px;
+    max-height: 934px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
 app-application {
     display: flex;
     flex-direction: column;

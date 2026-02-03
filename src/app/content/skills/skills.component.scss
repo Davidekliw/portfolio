@@ -5,6 +5,15 @@
     gap: 40px;
 }
 
+.glow {
+    max-width: 898px;
+    max-height: 976px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-70%, 0);
+    pointer-events: none;
+}
+
 .mySkillsTextBox {
     max-width: 650px;
     width: 100%;
@@ -114,7 +123,6 @@ h4 {
     p {
         padding-left: 12px;
     }
-
 
     .skills {
         flex-direction: column;

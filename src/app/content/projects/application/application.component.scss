@@ -1,8 +1,13 @@
+.gap15 {
+    gap: 15px;
+}
+
 .projectBox {
     min-height: 340px;
     width: 100%;
     justify-content: flex-end;
     gap: 35px;
+    padding: 0 16px;
 
     &.reverseRow {
         flex-direction: row-reverse;
@@ -10,7 +15,7 @@
 
     .discriptionBox {
         width: 513px;
-        gap: 30px;
+        gap: 35px;
         flex: 1;
 
         &.changeTextAlignment {
@@ -101,10 +106,28 @@
     transform-origin: 600px 560px;
     transform: perspective(120000px) rotateX(-90deg);
     transition: transform 1200ms ease;
+    cursor: pointer;
 }
 
 .laptop.open .lid {
     transform: perspective(120000px) rotateX(0deg);
+}
+
+.rim {
+    transform-origin: 600px 700px;
+    transform: perspective(120000px) rotateX(0deg);
+    transition: transform 1200ms ease;
+}
+
+.laptop.open .rim {
+    transform: perspective(120000px) rotateX(-90deg);
+}
+
+.greenStrip {
+    x: 250px;
+    y: 500px;
+    width: 700px;
+    height: 40px;
 }
 
 h3 {
@@ -133,7 +156,6 @@ h4 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 35px;
 
         &.reverseRow {
             flex-direction: column;

@@ -11,6 +11,21 @@
     }
 }
 
+.glow {
+    max-width: 898px;
+    max-height: 976px;
+    position: absolute;
+    top: 50%;
+    right: -38%;
+    transform: translate(-77%, 0%);
+    rotate: 90deg;
+    pointer-events: none;
+}
+
+.trans {
+    transform: translate(0px, 976px) scale(1, -1);
+}
+
 .borderBox {
     gap: 48px;
 
@@ -64,10 +79,6 @@
             border-radius: 50%;
             object-fit: cover;
         }
-    }
-
-    .posRel {
-        position: relative;
     }
 
     .rightDecorationLine {
