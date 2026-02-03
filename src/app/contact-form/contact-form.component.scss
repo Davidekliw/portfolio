@@ -4,6 +4,16 @@
 
 .contactBox {
     gap: 40px;
+    padding-bottom: 90px;
+}
+
+.glow {
+    max-width: 1083px;
+    max-height: 939px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-42%, -10%);
+    pointer-events: none;
 }
 
 .headlineBox {
@@ -15,10 +25,6 @@
         height: 2px;
         align-self: center;
     }
-}
-
-.posRel {
-    position: relative;
 }
 
 .contentBox {
