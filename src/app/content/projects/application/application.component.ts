@@ -56,6 +56,11 @@ export class ApplicationComponent implements AfterViewInit, OnDestroy {
     return this.lang.getStorageInformation().key === 'en';
   }
 
+  /* Opens the given project link in a new browser tab. */
+  openProject(link: string): void {
+    window.open(link, '_blank');
+  }
+
   /** List of projects to be displayed in the application section. */
   readonly projects: Project[] = [
     {
@@ -72,7 +77,7 @@ export class ApplicationComponent implements AfterViewInit, OnDestroy {
       technologies: 'Angular, JavaScript, HTML, CSS, PHP',
       descriptionDE: 'Mein persönliches Portfolio zur Präsentation meiner Projekte. Fokus auf modernes UI, Responsive Design, Mehrsprachigkeit und ein Kontaktformular.',
       descriptionEN: 'My personal portfolio website showcasing my projects. Focused on modern UI, responsive design, multi-language support and a contact form.',
-      image: 'assets/img/platzhalter.png',
+      image: 'assets/img/portfolio.png',
       link: '#start',
       gitlink: 'https://github.com/Davidekliw/portfolio'
     },
@@ -96,7 +101,7 @@ export class ApplicationComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Gasthaus zur Talsperre',
-      technologies: 'JavaScript, HTML, CSS',
+      technologies: 'JavaScript, SQL, PHP, HTML, CSS',
       descriptionDE: 'Moderne Restaurant-Website mit integriertem Menü-Generator: Der Betreiber kann Speisekarteninhalte selbst zusammenstellen, die als JSON gespeichert und dynamisch auf der Website angezeigt werden. Zusätzlich lässt sich ein Urlaubszeitraum pflegen, der an stelle der Speisekarte angezeigt wird.',
       descriptionEN: 'Modern restaurant website with a built-in menu generator: The owner can create and update the menu, which is stored as JSON and displayed dynamically on the website. In addition, a vacation period can be set and will be shown instead of the menu.',
       image: 'assets/img/gasthaus.png',
