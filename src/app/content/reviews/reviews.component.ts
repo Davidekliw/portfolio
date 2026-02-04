@@ -31,7 +31,7 @@ export class ReviewsComponent {
       id: 0,
       name: 'Kristin Siegmund',
       text: 'Sehr freundliche, kompetente und zuverlässige Betreuung und Umsetzung. Stets gut erreichbar und immer an den Wünschen des Kunden orientiert.',
-      image: 'assets/img/07.JPG'
+      image: 'assets/img/07.jpg'
     },
     {
       id: 1,
