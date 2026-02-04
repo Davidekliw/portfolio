@@ -33,7 +33,8 @@
         "send": "Absenden :)",
         "before": "Ich habe die",
         "privacy": "Datenschutzbestimmungen",
-        "after": " gelesen und akzeptiere diese."
+        "after": " gelesen und akzeptiere diese.",
+        "successful": "Deine Nachricht wurde erfolgreich versendet!"
     },
     "placeholders": {
         "name": "Name",

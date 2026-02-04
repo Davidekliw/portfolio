@@ -31,7 +31,8 @@
         "send": "Send message :)",
         "before": "I´ve read ",
         "privacy": "privacy policy",
-        "after": " and agree to the processing of my data as outlined."
+        "after": " and agree to the processing of my data as outlined.",
+        "successful": "Your message was sent successfully!"
     },
     "placeholders": {
         "name": "Your name",

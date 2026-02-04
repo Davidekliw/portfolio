@@ -38,6 +38,9 @@ export class ContactFormComponent {
   /** Tracks which field is currently focused/active (used for custom UI highlighting). */
   activeField: string | null = null;
 
+  /** Indicates whether the form was successfully submitted (for UI feedback). */
+  success: boolean = false;
+
   /**
  * Submits the form if valid, otherwise marks all fields as touched.
  * NOTE: Sending is not implemented yet (placeholder).
@@ -47,7 +50,11 @@ export class ContactFormComponent {
       this.form.markAllAsTouched();
       return;
     }
-    // TODO: send
+    this.success = true;
+    setTimeout(() => {
+      this.success = false;
+      this.form.reset();
+    }, 3000);
     console.log(this.form.value);
   }
 
@@ -112,4 +119,6 @@ export class ContactFormComponent {
   showSuccess(c: AbstractControl | null): boolean {
     return !!c && c.valid && (c.dirty || c.touched);
   }
+
+
 }
