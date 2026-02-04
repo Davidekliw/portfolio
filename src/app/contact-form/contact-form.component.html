@@ -16,11 +16,12 @@
                 </div>
             </div>
         </div>
-        <form class="formContainer flexColumn" autocomplete="on" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <form class="formContainer flexColumn" autocomplete="on" [formGroup]="form" (ngSubmit)="onSubmit(form)"
+            novalidate>
             <div class="hintBox flexColumn">
                 <div class="posRel">
-                    <input formControlName="name" id="name" name="given-name" [placeholder]=" 'placeholders.name' | translate"
-                        autocomplete="given-name" (focus)="setActive('name')" (blur)="clearActive('name')">
+                    <input formControlName="name" id="name" name="name" [placeholder]=" 'placeholders.name' | translate"
+                        autocomplete="name" (focus)="setActive('name')" (blur)="clearActive('name')">
                     @if (showError(name)) {
                     <span class="icon error">
                         <!-- ERROR SVG -->
@@ -50,6 +51,7 @@
                 </div>
                 }
             </div>
+            <input formControlName="thirdName" name="thirdName" type="text" hidden>
             <div class="hintBox flexColumn">
                 <div class="posRel">
                     <input formControlName="email" id="email" name="email" type="email"

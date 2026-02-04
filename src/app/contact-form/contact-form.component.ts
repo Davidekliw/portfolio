@@ -1,7 +1,7 @@
-
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { TranslateDirective, TranslatePipe } from "@ngx-translate/core";
 import { FormBuilder, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,14 +25,20 @@ import { RouterLink } from "@angular/router";
  */
 export class ContactFormComponent {
 
+  constructor(private http: HttpClient) { }
+
   private readonly fb = inject(FormBuilder);
+
+  readonly formStart = Date.now();
 
   /** Reactive contact form definition with validation rules. */
   readonly form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[\p{L} '’-]+$/u)]],
+    thirdName: [''],
     email: ['', [Validators.required, Validators.email]],
-    subject: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
-    agree: [false, Validators.requiredTrue]
+    message: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+    agree: [false, Validators.requiredTrue],
+    formTime: [this.formStart]
   });
 
   /** Tracks which field is currently focused/active (used for custom UI highlighting). */
@@ -41,20 +47,30 @@ export class ContactFormComponent {
   /** Indicates whether the form was successfully submitted (for UI feedback). */
   success: boolean = false;
 
+  sendForm(data: any) {
+    return this.http.post('assets/scripts/sendMail.php', data);
+  }
+
   /**
  * Submits the form if valid, otherwise marks all fields as touched.
  * NOTE: Sending is not implemented yet (placeholder).
  */
-  onSubmit(): void {
+  onSubmit(form: any): void {
+    console.log(this.fb.group);
+    console.log(this.form?.get('thirdName')?.errors);
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
     this.success = true;
+    this.sendForm(form.value).subscribe({
+      next: () => this.success = true,
+      error: () => this.success = false
+    });
     setTimeout(() => {
       this.success = false;
       this.form.reset();
-    }, 3000);
+    }, 4000);
     console.log(this.form.value);
   }
 
@@ -63,12 +79,16 @@ export class ContactFormComponent {
     return this.form.get('name');
   }
 
+  get thirdName() {
+    return this.form.get('thirdName');
+  }
+
   get email() {
     return this.form.get('email');
   }
 
-  get subject() {
-    return this.form.get('subject');
+  get message() {
+    return this.form.get('message');
   }
 
   get agree() {
