@@ -1,8 +1,24 @@
 .aboveTheFold {
     max-width: 1440px;
-    flex-wrap: wrap;
-    // position: relative;
-    // overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    width: calc(100% + 200px);
+    max-width: 100vw;
+    height: 100%;
+    inset: 0;
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(1200px 900px at 45% 0%,
+            var(--hero-c1, #1A2743) 0%,
+            var(--hero-c2, #27334B) 20%,
+            var(--hero-c3, #141D2F) 75%);
+    clip-path: path("M1642 0V912.4C1617.8 924.3 1593 935.9 1567.7 947.3C1374.2 1034.1 943.8 1108.2 682.9 1167.3C404.9 1230.3 152.1 1263 2 1278.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1642 0Z");
+    clip-path: path("M 1642 0 V 912.4 C 1617.8 924.3 1593 935.9 1567.7 947.3 C 1374.2 1034.1 943.8 1108.2 682.9 1167.3 C 404.9 1230.3 152.1 1263 2 1278.6 L 0 357 C 236 441.5 578 412 814 365 C 1243 277 1281.7 152.1 1642 0 Z");
+
 }
 
 .glow {
@@ -13,18 +29,33 @@
     left: -150px;
     right: -150px;
     z-index: 1;
-    // overflow-x: default;
-    overflow-y: hidden;
     pointer-events: none;
 }
 
-img {
+.heroImage {
     max-width: 600px;
     width: 100%;
     max-height: calc(100vh - 110px);
     height: auto;
-    flex: 1;
     object-fit: contain;
+}
+
+.backGroundElementBox {
+    width: 100%;
+    max-width: 1442px;
+    height: 100%;
+    max-height: 1079px;
+    z-index: 2;
+    pointer-events: none;
+
+    .backGroundElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        object-fit: cover;
+        pointer-events: none;
+    }
 }
 
 .headlines {
@@ -63,7 +94,6 @@ img {
             background-color: var(--color-secondary);
             border: 1px solid var(--color-secondary);
             cursor: pointer;
-
         }
     }
 }
@@ -89,8 +119,37 @@ h2 {
     color: var(--color-secondary);
 }
 
+@media (max-width: 1200px) {
+    .aboveTheFold {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: nowrap;
+    }
+
+    .heroBg {
+        top: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroBg {
+        top: 28%;
+    }
+}
+
 @media (max-width: 500px) {
     h1 {
         line-height: 1.0;
+    }
+}
+
+@media (max-width: 350px) {
+    .textOrder {
+        text-align: center;
+
+        h2 {
+            white-space: normal;
+        }
     }
 }
