@@ -16,15 +16,6 @@ app-menu {
     z-index: 10;
 }
 
-.contentPosition {
-    max-width: 1440px;
-    width: 100%;
-    margin-top: 110px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
 @media (max-width: 950px) {
     app-menu {
         padding-left: 50px;

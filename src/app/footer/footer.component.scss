@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-background);
-    // border-top: solid 4px var(--color-primary);
 }
 
 .footer {
@@ -16,7 +15,6 @@
     column-gap: 40px;
     row-gap: 20px;
     border-top: solid 4px var(--color-primary);
-
     overflow: hidden;
 }
 
@@ -24,8 +22,6 @@
     max-width: 1083px;
     max-height: 939px;
     position: absolute;
-    // top: 0;
-    // left: 50%;
     transform: translate(-50%, -20%);
     z-index: -1;
     pointer-events: none;
