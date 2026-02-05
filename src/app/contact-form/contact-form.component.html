@@ -115,6 +115,9 @@
                         @if (message?.errors?.['minlength']) {
                         <div>{{ "errors.moreAs2Characters" | translate }}</div>
                         }
+                        @if (message?.errors?.['maxlength']) {
+                        <div>{{ "errors.toMuchCharacters" | translate }}</div>
+                        }
                     </div>
                     }
                 </div>
@@ -135,9 +138,11 @@
                         </div>
                     </div>
                     <div class="reservePlaceBox">
-                        <button class="sendingButton flexCenter" [class.hide]="success" [class.active]="form.valid"
-                            type="submit" [translate]="'contact.send'"></button>
+                        <button class="sendingButton flexCenter" [class.hide]="success || submitError"
+                            [class.active]="form.valid" [disabled]="success" type="submit"
+                            [translate]="'contact.send'"></button>
                         <span class="successBox" [class.active]="success" [translate]="'contact.successful'"></span>
+                        <span class="errorBox" [class.active]="submitError" [translate]="'errors.submitForm'"></span>
                     </div>
                 </div>
             </div>
