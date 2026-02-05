@@ -1,0 +1,116 @@
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-text);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 15px 25px;
+    background-color: var(--color-background);
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid var(--color-primary);
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid var(--color-primary);
+    }
+
+    &.ng-valid {
+        border-color: var(--color-primary);
+        transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
+    }
+
+    &.ng-invalid:focus {
+        border-color: var(--color-warn);
+        transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.textAreaIconPosition {
+    top: 26px;
+}
+
+.icon.success {
+    color: var(--color-primary);
+}
+
+.icon.error {
+    color: var(--color-warn);
+    font-size: 14px;
+}
+
+.icon.error .ng-invalid {
+    color: var(--color-warn);
+}
+
+::ng-deep {
+
+    .mat-mdc-checkbox {
+        width: 24px !important;
+        height: 24px !important;
+        --mdc-checkbox-state-layer-size: 24px;
+    }
+
+    .mdc-checkbox__background {
+        border-color: var(--color-primary) !important;
+        background-color: var(--color-background) !important;
+    }
+
+    .mat-mdc-checkbox:hover .mdc-checkbox__background {
+        background-color: rgba(24, 55, 113, 1) !important;
+    }
+
+    .mat-mdc-checkbox-touch-target {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .mdc-checkbox__ripple {
+        width: 24px !important;
+        height: 24px !important;
+        background-color: rgba(24, 55, 113, 1) !important;
+        opacity: 0 !important;
+        transition: opacity 0.2s ease-in-out !important;
+    }
+
+    .mat-mdc-checkbox:hover .mdc-checkbox__ripple {
+        background-color: rgba(24, 55, 113, 1) !important;
+        opacity: 1 !important;
+    }
+
+    .mat-mdc-checkbox-checked:hover .mdc-checkbox__background {
+        background-color: #183771 !important;
+    }
+
+    .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__ripple {
+        background-color: #183771 !important;
+    }
+
+    .mdc-checkbox__checkmark {
+        color: var(--color-primary) !important;
+    }
+
+    .mdc-checkbox__native-control:focus~.mdc-checkbox__background {
+        border-color: var(--color-primary) !important;
+    }
+}
