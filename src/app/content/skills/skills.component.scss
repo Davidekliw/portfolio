@@ -50,6 +50,12 @@
     .changeColor {
         display: inline;
         color: var(--color-secondary);
+        white-space: nowrap;
+    }
+
+    .changeColor::after {
+        content: " ?";
+        color: var(--color-text);
     }
 }
 
@@ -92,9 +98,8 @@ p {
 }
 
 h4 {
-    size: clamp(24px, 4vw, 32px);
+    font-size: clamp(24px, 4vw, 32px);
     font-weight: 700;
-    font-style: bold;
     margin: 0;
 }
 
