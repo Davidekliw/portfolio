@@ -44,9 +44,11 @@
     "errors": {
         "nameReq": "Ein Name wird benötigt.",
         "moreAs2Characters": "Mindestens 2 Zeichen eingeben.",
+        "toMuchCharacters": "Bitte nicht mehr als 500 Zeichen.",
         "mailReq": "Bitte gib deine gültige E-Mailadresse an.",
         "textReq": "Hier bitte deine Nachricht an mich eingeben.",
-        "privacy": "Bitte stimme der Datenschutzerklärung zu."
+        "privacy": "Bitte stimme der Datenschutzerklärung zu.",
+        "submitForm": "Fehler beim Senden."
     },
     "footer": {
         "legal": "Impressum"

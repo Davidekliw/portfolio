@@ -42,9 +42,11 @@
     "errors": {
         "nameReq": "Your name is required",
         "moreAs2Characters": "Enter at least 2 characters",
+        "toMuchCharacters": "Please no more than 500 characters.",
         "mailReq": "Your email is required",
         "textReq": "Your message is empty",
-        "privacy": "Please accept the privacy policy."
+        "privacy": "Please accept the privacy policy.",
+        "submitForm": "Send Error."
     },
     "footer": {
         "legal": "Legal Notice"
