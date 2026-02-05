@@ -23,8 +23,8 @@ export class SozialLinksComponent {
 
   /** Social icons and their target links used in the template. */
   readonly icons: SocialIcon[] = [
-    { imgSrc: 'assets/icons/gitHub.svg', link: 'https://github.com/deinname', ariaLabel: 'Open GitHub profile' },
-    { imgSrc: 'assets/icons/linkedIn.svg', link: 'https://linkedin.com/in/deinname', ariaLabel: 'Open LinkedIn profile' },
+    { imgSrc: 'assets/icons/gitHub.svg', link: 'https://github.com/Davidekliw', ariaLabel: 'Open GitHub profile' },
+    // { imgSrc: 'assets/icons/linkedIn.svg', link: 'https://linkedin.com/in/deinname', ariaLabel: 'Open LinkedIn profile' },
     { imgSrc: 'assets/icons/mail.svg', link: 'mailto:david@example.com', ariaLabel: 'Send me an email' }
   ];
 
