@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { TranslateDirective } from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-impressum',
+  selector: 'app-imprint',
   standalone: true,
   imports: [TranslateDirective],
   templateUrl: './imprint.component.html',
