@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateDirective, TranslatePipe } from "@ngx-translate/core";
 import { FormBuilder, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -15,13 +15,13 @@ import { RouterLink } from "@angular/router";
   standalone: true,
   imports: [ReactiveFormsModule, TranslateDirective, TranslatePipe, MatFormFieldModule, MatIconModule, MatInputModule, MatCheckboxModule, RouterLink],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./contact-form.component.scss', './contact-form-form.component.scss']
 })
 
 /**
  * Contact form component (Reactive Forms + Angular Material).
- * Validates user input and provides helper functions for showing success/error states in the UI.
+ * Validates user input and submits the payload to a PHP endpoint.
+ * Includes hidden honeypot + form start timestamp for basic bot mitigation.
  */
 export class ContactFormComponent {
 
@@ -36,7 +36,7 @@ export class ContactFormComponent {
     name: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[\p{L} '’-]+$/u)]],
     thirdName: [''],
     email: ['', [Validators.required, Validators.email]],
-    message: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+    message: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(500)]],
     agree: [false, Validators.requiredTrue],
     formTime: [this.formStart]
   });
@@ -44,37 +44,56 @@ export class ContactFormComponent {
   /** Tracks which field is currently focused/active (used for custom UI highlighting). */
   activeField: string | null = null;
 
-  /** Indicates whether the form was successfully submitted (for UI feedback). */
+  /** Controls the success message visibility in the UI. */
   success: boolean = false;
 
+  /** Controls the success message visibility in the UI. */
+  submitError: boolean = false;
+
+  /** Sends the form payload to the backend mail script. */
   sendForm(data: any) {
     return this.http.post('assets/scripts/sendMail.php', data);
   }
 
   /**
- * Submits the form if valid, otherwise marks all fields as touched.
- * NOTE: Sending is not implemented yet (placeholder).
- */
-  onSubmit(form: any): void {
-    console.log(this.fb.group);
-    console.log(this.form?.get('thirdName')?.errors);
+   * Resets the form and success indicator after a delay.
+   */
+  resetFormAfterInterval(): void {
+    setTimeout(() => {
+      this.success = false;
+      this.submitError = false;
+      this.form.reset({
+        agree: false,
+        thirdName: '',
+        formTime: Date.now(),
+      });
+      this.form.enable();
+    }, 5000);
+  }
+
+  /**
+   * Submits the form if valid; otherwise marks all fields as touched.
+   * Shows a temporary success indicator on successful response.
+   */
+  onSubmit(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
-    this.success = true;
-    this.sendForm(form.value).subscribe({
-      next: () => this.success = true,
-      error: () => this.success = false
+    this.form.disable();
+    this.sendForm(this.form.getRawValue()).subscribe({
+      next: () => {
+        this.success = true;
+        this.resetFormAfterInterval();
+      },
+      error: () => {
+        this.submitError = true;
+        this.resetFormAfterInterval();
+      }
     });
-    setTimeout(() => {
-      this.success = false;
-      this.form.reset();
-    }, 4000);
-    console.log(this.form.value);
   }
 
-  /*shortcut accessors for form controls*/
+  /** Shortcut accessors for form controls. */
   get name() {
     return this.form.get('name');
   }

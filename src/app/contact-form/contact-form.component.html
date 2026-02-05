@@ -16,8 +16,7 @@
                 </div>
             </div>
         </div>
-        <form class="formContainer flexColumn" autocomplete="on" [formGroup]="form" (ngSubmit)="onSubmit(form)"
-            novalidate>
+        <form class="formContainer flexColumn" autocomplete="on" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
             <div class="hintBox flexColumn">
                 <div class="posRel">
                     <input formControlName="name" id="name" name="name" [placeholder]=" 'placeholders.name' | translate"
