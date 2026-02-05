@@ -133,7 +133,7 @@ h2 {
 
 @media (max-width: 600px) {
     .heroBg {
-        top: 28%;
+        top: clamp(-20px, calc(-20px + 450px * ((100vw - 280px) / 320px)), 430px);
     }
 }
 
