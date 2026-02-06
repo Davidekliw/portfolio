@@ -1,5 +1,13 @@
 .aboveTheFold {
     max-width: 1440px;
+    height: calc(100vh - 110px);
+    max-height: 865px;
+    min-height: 0;
+    display: flex;
+}
+
+.aboveTheFold>.posRel {
+    min-height: 0;
 }
 
 .heroBg {
@@ -34,9 +42,15 @@
 .heroImage {
     max-width: 600px;
     width: 100%;
-    max-height: calc(100vh - 110px);
     height: auto;
+    max-height: calc(100vh - 110px);
     object-fit: contain;
+    margin: 0 auto;
+}
+
+.aboveTheFold>.textOrder {
+    flex: 0 0 auto;
+    min-height: 0;
 }
 
 .backGroundElementBox {
@@ -111,7 +125,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(28px, 4vw, 58px);
+    font-size: clamp(23px, 4vw, 58px);
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -127,13 +141,31 @@ h2 {
     }
 
     .heroBg {
-        top: 40%;
+        top: 22%;
+    }
+
+    .aboveTheFold>.textOrder {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .heroBg {
+        top: 24%;
+    }
+}
+
+@media (max-width: 800px) {
+    .heroBg {
+        top: 26%;
     }
 }
 
 @media (max-width: 600px) {
     .heroBg {
-        top: clamp(-20px, calc(-20px + 450px * ((100vw - 280px) / 320px)), 430px);
+        top: clamp(121px, 121px + 112px * (100vw - 280px) / 320px, 233px);
     }
 }
 
