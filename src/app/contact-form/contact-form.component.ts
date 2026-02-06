@@ -159,5 +159,8 @@ export class ContactFormComponent {
     return !!c && c.valid && (c.dirty || c.touched);
   }
 
-
+  /* Smoothly scroll to the section with the given id */
+  scrollTo(id: string): void {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

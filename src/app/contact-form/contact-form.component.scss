@@ -210,6 +210,24 @@
     }
 }
 
+.goUpBox {
+    height: 39px;
+}
+
+.goUp {
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: white;
+}
+
+.goUp:hover {
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
 @media (max-width: 1000px) {
     .contentBox {
         padding-left: 50px;
