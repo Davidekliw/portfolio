@@ -76,7 +76,7 @@
                 </div>
                 @if (fieldActiveInvalid('email')) {
                 <div class="error">
-                    @if (email?.errors?.['required']) {
+                    @if (email?.errors?.['required'] || email?.errors?.['pattern']) {
                     <div>{{ "errors.mailReq" | translate }}</div>
                     }
                 </div>

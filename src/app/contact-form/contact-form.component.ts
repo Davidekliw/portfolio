@@ -35,7 +35,7 @@ export class ContactFormComponent {
   readonly form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[\p{L} '’-]+$/u)]],
     thirdName: [''],
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$")]],
     message: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(500)]],
     agree: [false, Validators.requiredTrue],
     formTime: [this.formStart]
