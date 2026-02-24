@@ -1,31 +1,19 @@
 app-menu {
     width: 100%;
-    max-width: 1440px;
     height: 110px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 37px;
-    padding-bottom: 37px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     top: 0;
     background-color: var(--color-background);
     z-index: 10;
 }
 
-@media (max-width: 950px) {
-    app-menu {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-}
-
-@media (max-width: 670px) {
-    app-menu {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+app-footer {
+    height: 291px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-top: solid 4px var(--color-primary);
 }

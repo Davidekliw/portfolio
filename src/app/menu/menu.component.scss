@@ -1,3 +1,11 @@
+.navBox {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 clamp(30px, -250px + 35vw, 100px);
+    display: flex;
+    align-items: center;
+}
+
 .navBar {
     flex: 1;
     font-size: 23px;

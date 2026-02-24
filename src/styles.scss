@@ -17,10 +17,19 @@ $portfolio-theme: mat.define-light-theme((color: (primary: $portfolio-primary,
 
 app-root {
     width: 100%;
-    max-width: 1440px;
     min-height: calc(100vh - 110px - 291px);
     overflow-y: clip;
     margin: 110px auto 0;
+}
+
+app-content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 app-privacy-policy {
