@@ -70,7 +70,7 @@ export class ApplicationComponent implements AfterViewInit, OnDestroy {
       descriptionEN: 'JOIN is a Kanban board built as a group project. Tasks can be created, assigned and moved between status columns using drag & drop.',
       image: 'assets/img/join.png',
       link: 'https://join.david-wilke.com',
-      gitlink: 'https://github.com/ChristianBockshorn/JOIN-46#'
+      gitlink: 'https://github.com/Davidekliw/JOIN-Kanban-Project'
     },
     {
       title: 'Portfolio',
