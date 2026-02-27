@@ -12,10 +12,10 @@
 
 .heroBg {
     position: absolute;
-    width: calc(100% + 200px);
+    width: 100vw;
+    max-width: 1440px;
     height: 100%;
     inset: 0;
-    top: 52%;
     left: 50%;
     transform: translateX(-50%);
     background:
@@ -23,9 +23,16 @@
             var(--hero-c1, #1A2743) 0%,
             var(--hero-c2, #27334B) 20%,
             var(--hero-c3, #141D2F) 75%);
-    clip-path: path("M1642 0V912.4C1617.8 924.3 1593 935.9 1567.7 947.3C1374.2 1034.1 943.8 1108.2 682.9 1167.3C404.9 1230.3 152.1 1263 2 1278.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1642 0Z");
     clip-path: path("M 1642 0 V 912.4 C 1617.8 924.3 1593 935.9 1567.7 947.3 C 1374.2 1034.1 943.8 1108.2 682.9 1167.3 C 404.9 1230.3 152.1 1263 2 1278.6 L 0 357 C 236 441.5 578 412 814 365 C 1243 277 1281.7 152.1 1642 0 Z");
+}
 
+.heroBgRow {
+    display: block;
+    top: 52%;
+}
+
+.heroBgColumn {
+    display: none;
 }
 
 .glow {
@@ -46,6 +53,7 @@
     max-height: calc(100vh - 110px);
     object-fit: contain;
     margin: 0 auto;
+    display: block;
 }
 
 .aboveTheFold>.textOrder {
@@ -141,8 +149,14 @@ h2 {
         flex-wrap: nowrap;
     }
 
-    .heroBg {
-        top: 22%;
+    .heroBgRow {
+        display: none;
+    }
+
+    .heroBgColumn {
+        display: block;
+        height: 160%;
+        top: clamp(180px, calc(324px - 12vw), 204px);
     }
 
     .aboveTheFold>.textOrder {
@@ -153,26 +167,31 @@ h2 {
 }
 
 @media (max-width: 1000px) {
-    .heroBg {
-        top: 24%;
-    }
-}
-
-@media (max-width: 800px) {
-    .heroBg {
-        top: 26%;
+    .heroBgColumn {
+        top: clamp(204px, calc(294px - 9vw), 240px);
     }
 }
 
 @media (max-width: 600px) {
-    .heroBg {
-        top: clamp(121px, 121px + 112px * (100vw - 280px) / 320px, 233px);
+    .heroBgColumn {
+        top: 240px
     }
 }
 
 @media (max-width: 500px) {
     h1 {
         line-height: 1.0;
+    }
+}
+
+@media (max-width: 450px) {
+    .heroBg {
+        width: calc(100vw + 200px);
+    }
+
+    .heroBgColumn {
+        top: clamp(90px, calc(-383px + 135vw), 225px);
+        height: 160%;
     }
 }
 
@@ -183,5 +202,27 @@ h2 {
         h2 {
             white-space: normal;
         }
+    }
+
+    .heroBgColumn {
+        top: clamp(-6px, calc(-350px + 123vw), 80px);
+    }
+}
+
+@media (max-height: 970px) {
+    .heroBgColumn {
+        display: none;
+    }
+
+    .heroImageWrapper::after {
+        content: "";
+        position: absolute;
+        left: -25%;
+        right: -25%;
+        bottom: -84px;
+        height: 165px;
+        pointer-events: none;
+        z-index: 2;
+        background: url("/assets/img/heroBackground.png") center bottom / 100% 100% no-repeat;
     }
 }
