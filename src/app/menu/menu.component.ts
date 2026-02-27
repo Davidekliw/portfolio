@@ -24,6 +24,7 @@ export class MenuComponent implements OnDestroy {
 
   scroll = inject(ScrollService);
 
+  /* Listen to router events to reset active section highlight when navigating to a new page */
   constructor(private router: Router) {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
