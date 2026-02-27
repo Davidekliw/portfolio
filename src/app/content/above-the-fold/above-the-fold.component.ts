@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { environment } from '../../environments/environments';
 import { TranslateDirective } from '@ngx-translate/core';
+import { ScrollService } from '../../service/scroll.service';
 
 @Component({
   selector: 'app-above-the-fold',
@@ -16,11 +17,7 @@ import { TranslateDirective } from '@ngx-translate/core';
  */
 export class AboveTheFoldComponent {
 
+  scroll = inject(ScrollService);
   /** Display name loaded from environment configuration */
   readonly name = environment.name;
-
-  /** Scrolls smoothly to the element with the given ID */
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }
 }

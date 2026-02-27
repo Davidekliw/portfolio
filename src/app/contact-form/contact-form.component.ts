@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterLink } from "@angular/router";
+import { ScrollService } from '../service/scroll.service';
 
 
 @Component({
@@ -30,6 +31,8 @@ export class ContactFormComponent {
   private readonly fb = inject(FormBuilder);
 
   readonly formStart = Date.now();
+
+  scroll = inject(ScrollService);
 
   /** Reactive contact form definition with validation rules. */
   readonly form = this.fb.group({
@@ -157,10 +160,5 @@ export class ContactFormComponent {
    */
   showSuccess(c: AbstractControl | null): boolean {
     return !!c && c.valid && (c.dirty || c.touched);
-  }
-
-  /* Smoothly scroll to the section with the given id */
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

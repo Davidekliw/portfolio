@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SozialLinksComponent } from './sozial-links/sozial-links.component';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { TranslateDirective } from '@ngx-translate/core';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { ScrollService } from '../service/scroll.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,8 +19,11 @@ export class FooterComponent {
   readonly fname = environment.fname;
   readonly year = environment.year;
 
-  /* Smoothly scroll to the section with the given id */
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  private router = inject(Router);
+  scroll = inject(ScrollService);
+
+  /* Navigate to the imprint page */
+  openImprint() {
+    this.router.navigateByUrl('/imprint');
   }
 }

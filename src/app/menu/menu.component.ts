@@ -1,10 +1,12 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { ChangeThemeComponent } from './change-theme/change-theme.component';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environments';
 import { ChangeLanguageComponent } from "./change-language/change-language.component";
 import { TranslateDirective } from '@ngx-translate/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink, Router, NavigationEnd } from "@angular/router";
+import { ScrollService } from '../service/scroll.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
@@ -20,6 +22,18 @@ import { RouterLink } from "@angular/router";
  */
 export class MenuComponent implements OnDestroy {
 
+  scroll = inject(ScrollService);
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        if (this.router.url !== '/') {
+          this.selected = "";
+        }
+      });
+  }
+
   /* Access environment variable for use in template */
   fname = environment.fname;
 
@@ -31,6 +45,7 @@ export class MenuComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
   }
 
   /* set the currently activate menu section for visual highlight */
@@ -38,20 +53,17 @@ export class MenuComponent implements OnDestroy {
     this.selected = section;
   }
 
-  /* Smoothly scroll to the section with the given id */
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  /* Toggle mobile menu open/close state and manage body scroll */
+  /* Toggle mobile menu open/close state and manage scroll */
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
     document.body.classList.toggle('no-scroll', this.menuOpen);
+    document.documentElement.classList.toggle('no-scroll', this.menuOpen);
   }
 
-  /* Close the mobile menu and re-enable body scroll */
+  /* Close the mobile menu and re-enable scroll */
   closeMenu(): void {
     this.menuOpen = false;
     document.body.classList.toggle('no-scroll', this.menuOpen);
+    document.documentElement.classList.toggle('no-scroll', this.menuOpen);
   }
 }

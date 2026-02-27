@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Location } from '@angular/common';
 import { TranslateDirective } from "@ngx-translate/core";
+import { Router } from '@angular/router';
+import { ScrollService } from '../../service/scroll.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -16,10 +17,15 @@ import { TranslateDirective } from "@ngx-translate/core";
  */
 export class PrivacyPolicyComponent {
 
-  private readonly location = inject(Location);
+  private router = inject(Router);
+
+  /* Scroll to the top of the page when the component is initialized */
+  constructor(private scroll: ScrollService) {
+    this.scroll.top(true);
+  }
 
   /** Navigates back to the previous page in the browser history. */
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/'], { fragment: 'start' });
   }
 }

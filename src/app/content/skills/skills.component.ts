@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SkillIconBoxComponent } from "./skill-icon-box/skill-icon-box.component";
 import { CommonModule } from '@angular/common';
 import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { ScrollService } from "../../service/scroll.service";
 
 @Component({
   selector: 'app-skills',
@@ -16,9 +17,6 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
  * Displays a list of skills with icons.
  */
 export class SkillsComponent {
-
-  /** Smooth-scrolls to the element with the given id. */
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }
+  /* Inject the ScrollService to enable scrolling functionality */
+  scroll = inject(ScrollService);
 }
