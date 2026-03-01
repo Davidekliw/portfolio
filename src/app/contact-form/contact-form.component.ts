@@ -3,6 +3,7 @@ import { TranslateDirective, TranslatePipe } from "@ngx-translate/core";
 import { FormBuilder, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+import { trigger, transition, style, animate } from '@angular/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +17,22 @@ import { ScrollService } from '../service/scroll.service';
   standalone: true,
   imports: [ReactiveFormsModule, TranslateDirective, TranslatePipe, MatFormFieldModule, MatIconModule, MatInputModule, MatCheckboxModule, RouterLink],
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss', './contact-form-form.component.scss']
+  styleUrls: ['./contact-form.component.scss', './contact-form-form.component.scss'],
+  animations: [
+    trigger('errorAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-4px)' }),
+        animate('300ms ease-out',
+          style({ opacity: 1, transform: 'translateY(0)' })
+        )
+      ]),
+      transition(':leave', [
+        animate('300ms ease-out',
+          style({ opacity: 0, transform: 'translateY(-4px)' })
+        )
+      ])
+    ])
+  ]
 })
 
 /**

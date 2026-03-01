@@ -59,6 +59,12 @@
 .formContainer {
     max-width: 617px;
     min-width: 52%;
+    height: 572px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.inputFormContainer {
     flex: 1;
     gap: 32px;
 
@@ -69,6 +75,7 @@
     .error {
         color: var(--color-warn);
         font-size: 14px;
+        transition: max-height 250ms ease, opacity 200ms ease;
     }
 
     .reservePlaceBox {
