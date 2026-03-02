@@ -1,7 +1,7 @@
 .aboveTheFold {
     max-width: 1440px;
     height: calc(100vh - 110px);
-    max-height: 865px;
+    // max-height: 865px;
     min-height: 0;
     display: flex;
 }
@@ -17,7 +17,7 @@
     height: 100%;
     inset: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(50%);
     background:
         radial-gradient(1100px 900px at 45% 0%,
             var(--hero-c1, #1A2743) 0%,
@@ -28,7 +28,6 @@
 
 .heroBgRow {
     display: block;
-    top: 52%;
 }
 
 .heroBgColumn {
@@ -155,20 +154,12 @@ h2 {
 
     .heroBgColumn {
         display: block;
-        height: 160%;
-        top: clamp(180px, calc(324px - 12vw), 204px);
     }
 
     .aboveTheFold>.textOrder {
         flex: 0 0 auto;
         width: 100%;
         min-height: 0;
-    }
-}
-
-@media (max-width: 1000px) {
-    .heroBgColumn {
-        top: clamp(204px, calc(294px - 9vw), 240px);
     }
 }
 
@@ -188,11 +179,6 @@ h2 {
     .heroBg {
         width: calc(100vw + 200px);
     }
-
-    .heroBgColumn {
-        top: clamp(90px, calc(-383px + 135vw), 225px);
-        height: 160%;
-    }
 }
 
 @media (max-width: 350px) {
@@ -203,14 +189,11 @@ h2 {
             white-space: normal;
         }
     }
-
-    .heroBgColumn {
-        top: clamp(-6px, calc(-350px + 123vw), 80px);
-    }
 }
 
 @media (max-height: 970px) {
-    .heroBgColumn {
+    .heroBgColumn,
+    .heroBgRow {
         display: none;
     }
 
@@ -219,8 +202,11 @@ h2 {
         position: absolute;
         left: -25%;
         right: -25%;
-        bottom: -84px;
-        height: 165px;
+        bottom: 0px;
+        transform: translateY(100px);
+        height: 200px;
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
         pointer-events: none;
         z-index: 2;
         background: url("/assets/img/heroBackground.png") center bottom / 100% 100% no-repeat;
