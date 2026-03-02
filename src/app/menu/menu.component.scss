@@ -77,8 +77,9 @@ a.active {
     right: 0;
     z-index: 999;
     background-color: rgba(66, 73, 87, 1);
-    transform: translateX(100%);
-    transition: transform 280ms ease;
+    transform-origin: top right;
+    scale: 0;
+    transition: scale 380ms ease;
 
     .settingsSeparator {
         width: 180px;
@@ -95,7 +96,7 @@ a.active {
 }
 
 .mobileMenuBackground.open {
-    transform: translateX(0);
+    scale: 1;
 }
 
 @media (max-width:900px) {
